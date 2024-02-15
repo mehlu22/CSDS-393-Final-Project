@@ -1,2 +1,3 @@
 # CSDS-393-Final-Project
-A group final project for a Software Engineering class
+A group final project for a Software Engineering class.
+Our idea includes...
