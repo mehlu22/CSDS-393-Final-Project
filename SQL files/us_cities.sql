@@ -1,5 +1,5 @@
 CREATE TABLE `US_Cities_Data` (
-  `City` VARCHAR(255) NOT NULL,
+  `City` VARCHAR(300) NOT NULL,
   `Population` BIGINT,
   `CostOfLiving` DECIMAL(5,2),
   `AverageHighTemp` INT,
@@ -7,7 +7,7 @@ CREATE TABLE `US_Cities_Data` (
   `Precipitation` DECIMAL(5,2),
   `MedianAge` DECIMAL(4,1),
   `CrimeRate` INT,
-  `PoliticalAffiliation` VARCHAR(50),
+  `PoliticalAffiliation` VARCHAR(5300,
   `PublicTransportation` INT,
   PRIMARY KEY (`City`)
 );
