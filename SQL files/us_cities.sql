@@ -7,7 +7,7 @@ CREATE TABLE `US_Cities_Data` (
   `Precipitation` DECIMAL(5,2),
   `MedianAge` DECIMAL(4,1),
   `CrimeRate` INT,
-  `PoliticalAffiliation` VARCHAR(5300,
+  `PoliticalAffiliation` VARCHAR(300),
   `PublicTransportation` INT,
   PRIMARY KEY (`City`)
 );
