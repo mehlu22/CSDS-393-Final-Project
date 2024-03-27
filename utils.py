@@ -19,7 +19,7 @@ data = pd.read_sql(query, engine)
 
 mapping = {'Democrat': 1, 'Republican': 0, 'Neutral': -1}
 data['PoliticalAffiliation'] = data['PoliticalAffiliation'].map(mapping)
-print(data)
+# print(data)
 
 feature_columns = ['Population', 'CostOfLiving', 'AverageHighTemp', 'AverageLowTemp', 
                    'Precipitation', 'MedianAge', 'CrimeRate', 'PoliticalAffiliation', 'PublicTransportation']
