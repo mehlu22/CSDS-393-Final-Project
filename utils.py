@@ -58,6 +58,6 @@ def predict_city(features):
     return top3_cities
 
 # Example usage
-user_input = [60000000, 105, 72, 45, 37, 34, 2000, 1 , 45]
-predicted_cities = predict_city(user_input)
-print(f"3 City Predictions = {predicted_cities}")
+# user_input = [60000000, 105, 72, 45, 37, 34, 2000, 1 , 45]
+# predicted_cities = predict_city(user_input)
+# print(f"3 City Predictions = {predicted_cities}")
