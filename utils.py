@@ -17,9 +17,9 @@ data = pd.read_sql(query, engine)
 
 #done with database connection
 
-data = pd.get_dummies(data, columns=['PoliticalAffiliation'], drop_first=True)
-data.rename(columns={'PoliticalAffiliation_Republican': 'PoliticalAffiliation'}, inplace=True)
-# print(data)
+mapping = {'Democrat': 1, 'Republican': 0, 'Neutral': -1}
+data['PoliticalAffiliation'] = data['PoliticalAffiliation'].map(mapping)
+print(data)
 
 feature_columns = ['Population', 'CostOfLiving', 'AverageHighTemp', 'AverageLowTemp', 
                    'Precipitation', 'MedianAge', 'CrimeRate', 'PoliticalAffiliation', 'PublicTransportation']
