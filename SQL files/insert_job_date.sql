@@ -9,7 +9,7 @@ INSERT INTO US_JOB_DATA (City, Job, Exp_Sal, Role_Desc, Role, Type) VALUES
 	('Charlotte','Doctor','100000','NULL','Senior Level','In Person')
 	('Charlotte','Head Designer','100000','NULL','Senior Level','Hybrid')
 	(‘Chicago’, ‘Artist’, ‘50000’, NULL, ‘Entry Level’, ‘Remote’),
-	(‘Chicago’, ‘Doctor’, ‘130000, ‘Heal People’, ‘Senior Level’, ‘In Person’)
+	(‘Chicago’, ‘Doctor’, ‘130000', ‘Heal People’, ‘Senior Level’, ‘In Person’)
 	('Chicago','Cashier','100000','NULL','Entry Level','In Person')
 	('Cleveland','Teacher','100000','NULL','Senior Level','Hybrid')
 	('Cleveland','Artist','100000','NULL','Mid Level','Hybrid')
