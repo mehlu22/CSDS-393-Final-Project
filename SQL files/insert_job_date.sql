@@ -1,61 +1,61 @@
 INSERT INTO US_JOB_DATA (City, Job, Exp_Sal, Role_Desc, Role, Type) VALUES
-	('Austin','Programmer','80000','NULL','Mid Level','Hybrid')
-	('Austin','Project Manager','100000','NULL','Mid Level','Hybrid')
-	('Austin','Cashier','100000','NULL','Entry Level','In Person')
-	('Boston','Head Designer','100000','NULL','Senior Level','Remote')
-	('Boston','Programmer','100000','NULL','Entry Level','Hybrid')
-	('Boston','Teacher','100000','NULL','Mid Level','Hybrid')
-	('Charlotte','Cashier','100000','NULL','Entry Level','In Person')
-	('Charlotte','Doctor','100000','NULL','Senior Level','In Person')
-	('Charlotte','Head Designer','100000','NULL','Senior Level','Hybrid')
+	('Austin','Programmer','80000','NULL','Mid Level','Hybrid'),
+	('Austin','Project Manager','100000','NULL','Mid Level','Hybrid'),
+	('Austin','Cashier','100000','NULL','Entry Level','In Person'),
+	('Boston','Head Designer','100000','NULL','Senior Level','Remote'),
+	('Boston','Programmer','100000','NULL','Entry Level','Hybrid'),
+	('Boston','Teacher','100000','NULL','Mid Level','Hybrid'),
+	('Charlotte','Cashier','100000','NULL','Entry Level','In Person'),
+	('Charlotte','Doctor','100000','NULL','Senior Level','In Person'),
+	('Charlotte','Head Designer','100000','NULL','Senior Level','Hybrid'),
 	(‘Chicago’, ‘Artist’, ‘50000’, NULL, ‘Entry Level’, ‘Remote’),
-	(‘Chicago’, ‘Doctor’, ‘130000', ‘Heal People’, ‘Senior Level’, ‘In Person’)
-	('Chicago','Cashier','100000','NULL','Entry Level','In Person')
-	('Cleveland','Teacher','100000','NULL','Senior Level','Hybrid')
-	('Cleveland','Artist','100000','NULL','Mid Level','Hybrid')
-	('Cleveland','Programmer','100000','NULL','Mid Level','In Person')
-	('Dallas','Teacher','100000','NULL','Mid Level','In Person')
-	('Dallas','Doctor','100000','NULL','Senior Level','In Person')
-	('Dallas','Head Designer','100000','NULL','Senior Level','Hybrid')
-	('Denver','Cashier','100000','NULL','Entry Level','In Person')
-	('Denver','Clown','100000','NULL','Entry Level','In Person')
-	('Denver','Programmer','100000','NULL','Mid Level','Remote')
-	('Houston','Cashier','100000','NULL','Entry Level','In Person')
-	('Houston','Programmer','100000','NULL','Mid Level','Hybrid')
-	('Houston','Doctor','100000','NULL','Senior Level','In Person')
-	('Indianapolis','Doctor','100000','NULL','Senior Level','In Person')
-	('Indianapolis','Teacher','100000','NULL','Senior Level','In Person')
-	('Indianapolis','Artist','100000','NULL','Entry Level','Hybrid')
-	('Los Angeles','Artist','100000','NULL','Entry Level','Hybrid')
-	('Los Angeles','Author','100000','NULL','Entry Level','Hybrid')
-	('Los Angeles','Doctor','100000','NULL','Senior Level','In Person')
-	('Miami','Programmer','100000','NULL','Mid Level','Remote')
-	('Miami','Programmer','100000','NULL','Mid Level','Hybrid')
-	('Miami','Doctor','100000','NULL','Senior Level','In Person')
-	('Nashville','Artist','100000','NULL','Entry Level','Remote')
-	('Nashville','Teacher','100000','NULL','Senior Level','Hybrid')
-	('Nashville','Teacher','100000','NULL','Senior Level','Hybrid')
-	('New York','Teacher','100000','NULL','Mid Level','In Person')
-	('New York','Artist','100000','NULL','Mid Level','In Person')
-	('New York','Author','100000','NULL','Entry Level','Hybrid')
-	('Philadelphia','Head Designer','100000','NULL','Senior Level','Remote')
-	('Philadelphia','Teacher','100000','NULL','Senior Level','Remote')
-	('Philadelphia','Programmer','100000','NULL','Mid Level','Hybrid')
-	('Phoenix','Teacher','100000','NULL','Mid Level','In Person')
-	('Phoenix','Head Designer','100000','NULL','Senior Level','Hybrid')
-	('Phoenix','Author','100000','NULL','Entry Level','Remote')
-	('Portland','Author','100000','NULL','Entry Level','Remote')
-	('Portland','Teacher','100000','NULL','Senior Level','Remote')
-	('Portland','Teacher','100000','NULL','Mid Level','In Person')
-	('San Diego','Teacher','100000','NULL','Mid Level','Hybrid')
-	('San Diego','Artist','100000','NULL','Entry Level','Hybrid')
-	('San Diego','Programmer','100000','NULL','Mid Level','Remote')
-	('San Francisco','Author','100000','NULL','Entry Level','Remote')
-	('San Francisco','Teacher','100000','NULL','Mid Level','In Person')
-	('San Francisco','Doctor','100000','NULL','Senior Level','In Person')
-	('Seattle','Programmer','100000','NULL','Mid Level','Remote')
-	('Seattle','Head Designer','100000','NULL','Senior Level','Remote')
-	('Seattle','Artist','100000','NULL','Entry Level','Hybrid')
-	('Washington D.C','Doctor','100000','NULL','Senior Level','In Person')
-	('Washington D.C','President','100000','NULL','Entry Level','Hybrid')
+	(‘Chicago’, ‘Doctor’, ‘130000', ‘Heal People’, ‘Senior Level’, ‘In Person’),
+	('Chicago','Cashier','100000','NULL','Entry Level','In Person'),
+	('Cleveland','Teacher','100000','NULL','Senior Level','Hybrid'),
+	('Cleveland','Artist','100000','NULL','Mid Level','Hybrid'),
+	('Cleveland','Programmer','100000','NULL','Mid Level','In Person'),
+	('Dallas','Teacher','100000','NULL','Mid Level','In Person'),
+	('Dallas','Doctor','100000','NULL','Senior Level','In Person'),
+	('Dallas','Head Designer','100000','NULL','Senior Level','Hybrid'),
+	('Denver','Cashier','100000','NULL','Entry Level','In Person'),
+	('Denver','Clown','100000','NULL','Entry Level','In Person'),
+	('Denver','Programmer','100000','NULL','Mid Level','Remote'),
+	('Houston','Cashier','100000','NULL','Entry Level','In Person'),
+	('Houston','Programmer','100000','NULL','Mid Level','Hybrid'),
+	('Houston','Doctor','100000','NULL','Senior Level','In Person'),
+	('Indianapolis','Doctor','100000','NULL','Senior Level','In Person'),
+	('Indianapolis','Teacher','100000','NULL','Senior Level','In Person'),
+	('Indianapolis','Artist','100000','NULL','Entry Level','Hybrid'),
+	('Los Angeles','Artist','100000','NULL','Entry Level','Hybrid'),
+	('Los Angeles','Author','100000','NULL','Entry Level','Hybrid'),
+	('Los Angeles','Doctor','100000','NULL','Senior Level','In Person'),
+	('Miami','Programmer','100000','NULL','Mid Level','Remote'),
+	('Miami','Programmer','100000','NULL','Mid Level','Hybrid'),
+	('Miami','Doctor','100000','NULL','Senior Level','In Person'),
+	('Nashville','Artist','100000','NULL','Entry Level','Remote'),
+	('Nashville','Teacher','100000','NULL','Senior Level','Hybrid'),
+	('Nashville','Teacher','100000','NULL','Senior Level','Hybrid'),
+	('New York','Teacher','100000','NULL','Mid Level','In Person'),
+	('New York','Artist','100000','NULL','Mid Level','In Person'),
+	('New York','Author','100000','NULL','Entry Level','Hybrid'),
+	('Philadelphia','Head Designer','100000','NULL','Senior Level','Remote'),
+	('Philadelphia','Teacher','100000','NULL','Senior Level','Remote'),
+	('Philadelphia','Programmer','100000','NULL','Mid Level','Hybrid'),
+	('Phoenix','Teacher','100000','NULL','Mid Level','In Person'),
+	('Phoenix','Head Designer','100000','NULL','Senior Level','Hybrid'),
+	('Phoenix','Author','100000','NULL','Entry Level','Remote'),
+	('Portland','Author','100000','NULL','Entry Level','Remote'),
+	('Portland','Teacher','100000','NULL','Senior Level','Remote'),
+	('Portland','Teacher','100000','NULL','Mid Level','In Person'),
+	('San Diego','Teacher','100000','NULL','Mid Level','Hybrid'),
+	('San Diego','Artist','100000','NULL','Entry Level','Hybrid'),
+	('San Diego','Programmer','100000','NULL','Mid Level','Remote'),
+	('San Francisco','Author','100000','NULL','Entry Level','Remote'),
+	('San Francisco','Teacher','100000','NULL','Mid Level','In Person'),
+	('San Francisco','Doctor','100000','NULL','Senior Level','In Person'),
+	('Seattle','Programmer','100000','NULL','Mid Level','Remote'),
+	('Seattle','Head Designer','100000','NULL','Senior Level','Remote'),
+	('Seattle','Artist','100000','NULL','Entry Level','Hybrid'),
+	('Washington D.C','Doctor','100000','NULL','Senior Level','In Person'),
+	('Washington D.C','President','100000','NULL','Entry Level','Hybrid'),
 	('Washington D.C','Programmer','100000','NULL','Mid Level','Remote');
