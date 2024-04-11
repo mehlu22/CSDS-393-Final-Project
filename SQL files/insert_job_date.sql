@@ -1,7 +1,7 @@
 INSERT INTO US_JOB_DATA (City, Organization, Exp_Sal, Type) VALUES
 	('Austin','Cloudflare Consulting',80000,'Hybrid'),
 	('Austin','Positive Energy Engineering',100000,'Hybrid'),
-	('Austin','St. David's Medical Center',100000,'In Person'),
+	('Austin','St. Davids Medical Center',100000,'In Person'),
 	('Boston','Zagaran Software Engineering',100000,'Remote'),
 	('Boston','Vanderweil Consulting',100000,'Hybrid'),
 	('Boston','Masachusetts General Hospital',100000,'Hybrid'),
