@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Dialogbox.css'; // Ensure this path matches your file structure
 
 function DialogBox({ onClose, onSubmit }) {
@@ -7,30 +7,47 @@ function DialogBox({ onClose, onSubmit }) {
   const [avgLowTemp, setAvgLowTemp] = useState(50);
   const [precipitation, setPrecipitation] = useState(50);
   const [medianAge, setMedianAge] = useState(59);
-  const [costOfLiving, setCostOfLiving] = useState('');
-  const [crimeRate, setCrimeRate] = useState('');
-  const [politicalAffiliation, setPoliticalAffiliation] = useState('');
+  const [costOfLiving, setCostOfLiving] = useState(50);
+  const [crimeRate, setCrimeRate] = useState(50);
+  const [politicalAffiliation, setPoliticalAffiliation] = useState('Democrat');
+  const [publicTransportation, setPublicTransportation] = useState(50);
 
   // The submission handler
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // Here you can structure the formData as needed by your backend or further processing
     const formData = {
-      population,
-      avgHighTemp,
-      avgLowTemp,
-      precipitation,
-      medianAge,
-      costOfLiving,
-      crimeRate,
+      population: Number(population),
+      avgHighTemp: Number(avgHighTemp),
+      avgLowTemp: Number(avgLowTemp),
+      precipitation: Number(precipitation),
+      medianAge: Number(medianAge),
+      costOfLiving: costOfLiving === '' ? null: Number(costOfLiving),
+      crimeRate: crimeRate === '' ? null : Number(crimeRate), 
       politicalAffiliation,
+      publicTransportation: Number(publicTransportation),
     };
 
-    console.log(formData); // Demonstrating form data logging, replace with onSubmit call or other actions
-
-    // Call the onSubmit prop function passed from the parent component
-    onSubmit(); // Pass formData or other necessary information if needed
-
-    onClose(); // Close the dialog after submission
+    try {
+      const response = await fetch('http://localhost:5000/cities', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const result = await response.json();
+      console.log("Received Cities", result); // Log the success message
+      onSubmit(result);
+    } catch (error) {
+      console.error("Failed to submit form data", error);
+    }
+  
+    onClose();
   };
 
   return (
@@ -41,6 +58,11 @@ function DialogBox({ onClose, onSubmit }) {
         <div className="form-group">
           <label>Population: {population}</label>
           <input type="range" min="0" max="12000000" value={population} onChange={(e) => setPopulation(e.target.value)} />
+        </div>
+        {/* Input for cost of living */}
+        <div className="form-group">
+          <label>Cost of Living:</label>
+          <input type="text" value={costOfLiving} onChange={(e) => setCostOfLiving(e.target.value)} />
         </div>
         {/* Input for average high temperature */}
         <div className="form-group">
@@ -61,11 +83,6 @@ function DialogBox({ onClose, onSubmit }) {
         <div className="form-group">
           <label>Median Age: {medianAge}</label>
           <input type="range" min="18" max="100" value={medianAge} onChange={(e) => setMedianAge(e.target.value)} />
-        </div>
-        {/* Input for cost of living */}
-        <div className="form-group">
-          <label>Cost of Living:</label>
-          <input type="text" value={costOfLiving} onChange={(e) => setCostOfLiving(e.target.value)} />
         </div>
         {/* Input for crime rate */}
         <div className="form-group">
@@ -89,6 +106,11 @@ function DialogBox({ onClose, onSubmit }) {
               Neutral
             </label>
           </fieldset>
+        </div>
+        {/* Input for public transportation */}
+        <div className="form-group">
+          <label>Public transportation:</label>
+          <input type="text" value={publicTransportation} onChange={(e) => setPublicTransportation(e.target.value)} />
         </div>
         <button className="close-btn" onClick={onClose}>Close</button>
         <button className="submit-btn" onClick={handleSubmit}>Submit</button>

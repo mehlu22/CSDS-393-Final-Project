@@ -6,10 +6,12 @@ import CitiesDialogBox from './CitiDialogBox/CitiDialogBox';
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isCitiesDialogOpen, setIsCitiesDialogOpen] = useState(false);
-
+  const [cities, setCities] = useState([]);
+  const [isDataReady, setIsDataReady] = useState(false); 
   // Handles closing the filter dialog box
   const handleDialogClose = () => {
     setIsDialogOpen(false);
+    setIsDataReady(false)
   };
 
   // Handles closing the cities dialog box
@@ -19,9 +21,11 @@ function App() {
 
   // Handles the submission of the filter dialog box,
   // which in turn opens the cities dialog box
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (citiesData) => {
     setIsDialogOpen(false); // Close the filter dialog
     setIsCitiesDialogOpen(true); // Open the cities dialog
+    setCities(citiesData)
+    setIsDataReady(true)
   };
 
   return (
@@ -46,7 +50,7 @@ function App() {
         </div>
       </div>
       {isDialogOpen && <DialogBox onClose={handleDialogClose} onSubmit={handleFormSubmit} />}
-      {isCitiesDialogOpen && <CitiesDialogBox onClose={handleCitiesDialogClose} />}
+      {isCitiesDialogOpen && <CitiesDialogBox cities = {cities} onClose={handleCitiesDialogClose} />}
     </div>
   );
 }

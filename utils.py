@@ -7,13 +7,14 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import accuracy_score, f1_score
 
-engine = create_engine("mysql+pymysql://root:masood1965@localhost/uscitiesdata") # Change password here as per your local device
+'''engine = create_engine("mysql+pymysql://root:masood1965@localhost/uscitiesdata") # Change password here as per your local device
 
 #query data into a df
 query = """
 SELECT * FROM us_cities
 """
-data = pd.read_sql(query, engine)
+data = pd.read_sql(query, engine)'''
+data = pd.read_csv("US Cities Data.csv")
 
 #done with database connection
 
@@ -58,6 +59,6 @@ def predict_city(features):
     return top3_cities
 
 # Example usage
-# user_input = [60000000, 105, 72, 45, 37, 34, 2000, 1 , 45]
-# predicted_cities = predict_city(user_input)
-# print(f"3 City Predictions = {predicted_cities}")
+#user_input = [6000000, 55, 50, 50, 59, 50, 50, 1, 50]
+#predicted_cities = predict_city(user_input)
+#print(f"3 City Predictions = {predicted_cities}")
