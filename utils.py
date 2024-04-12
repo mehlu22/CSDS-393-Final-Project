@@ -14,7 +14,7 @@ query = """
 SELECT * FROM us_cities
 """
 data = pd.read_sql(query, engine)'''
-data = pd.read_csv("US Cities Data.csv")
+#data = pd.read_csv("US Cities Data.csv")
 
 #done with database connection
 
