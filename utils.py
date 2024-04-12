@@ -7,13 +7,13 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import accuracy_score, f1_score
 
-'''engine = create_engine("mysql+pymysql://root:masood1965@localhost/uscitiesdata") # Change password here as per your local device
+engine = create_engine("mysql+pymysql://root:masood1965@localhost/uscitiesdata") # Change password here as per your local device
 
 #query data into a df
 query = """
 SELECT * FROM us_cities
 """
-data = pd.read_sql(query, engine)'''
+data = pd.read_sql(query, engine)
 #data = pd.read_csv("US Cities Data.csv")
 
 #done with database connection
