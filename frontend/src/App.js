@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import DialogBox from './Dialogbox/DialogBox'; // Adjust the path as necessary
 import CitiesDialogBox from './CitiDialogBox/CitiDialogBox';
+import bg_image from "./images/bg_img.png";
+import git_img from "./images/github_logo.png";
 
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -25,7 +27,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage:`url(${bg_image})`}}>
       <div className="top-panel">
         <button id="searchBtn" onClick={() => setIsDialogOpen(true)}>Search</button>
         <button id="aboutBtn">About</button>
@@ -35,7 +37,7 @@ function App() {
       <div className="bottom-panel">
         <div className="bottom-left">
           <a href="https://github.com/mehlu22/CSDS-393-Final-Project/" target="_blank" rel="noopener noreferrer">
-            GitHub Repo <img src="./frontend/src/images/github_logo.png" alt="GitHub" />
+          GitHub Repo <img src= {git_img}  alt="GitHub" />
           </a>
         </div>
         <div className="bottom-center">
