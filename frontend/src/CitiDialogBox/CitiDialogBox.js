@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './CitiDialogBox.css';
 import CityDetailsDialogBox from '../CitiesDetailsDialogBox/CityDetailsDialogBox'; // This will be the new component
 
-function CitiesDialogBox({ cities, onClose, shouldFetch }) {
+function CitiesDialogBox({ cities, onClose }) {
   const [selectedCity, setSelectedCity] = useState('');
   const [showCityDetails, setShowCityDetails] = useState(false);
 
