@@ -14,12 +14,7 @@ def jobs():
 
     if request.method == 'POST':
         data = request.json
-        # Assume data contains the necessary features to predict cities
         features = list(data.values())
-        # Use your custom function to determine cities based on features
-        for i in features:
-            print(type(i))
-
         stored_job = find_job(features[0], features[1], features[2])
         print(stored_job)
         return jsonify(stored_job), 200
