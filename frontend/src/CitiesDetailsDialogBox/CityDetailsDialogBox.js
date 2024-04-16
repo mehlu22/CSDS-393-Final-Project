@@ -6,15 +6,38 @@ function CityDetailsDialogBox({ city, onClose }) {
   const [expectedSalary, setExpectedSalary] = useState('');
   const [type, setType] = useState('In-person');
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // Here, you would handle the submission logic
+    const formData = {
+      city: String(city),
+      profession: String(profession),
+      expectedSalary: Number(expectedSalary),
+
+    };
     console.log({
-      city,
-      profession,
-      expectedSalary,
-      type
+      formData
     });
-    onClose(); // Optionally close the dialog upon submission
+    try {
+      const response = await fetch('http://localhost:5001/jobs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const result = await response.json();
+      console.log("Received Companies", result); // Log the success message
+      //onSubmit(result);
+    } catch (error) {
+      console.error("Failed to submit form data", error);
+    }
+  
+    onClose();
   };
 
   return (
