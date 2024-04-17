@@ -61,6 +61,7 @@ function CityDetailsDialogBox({ city, onClose }) {
               value={expectedSalary}
               onChange={(e) => setExpectedSalary(e.target.value)}
               placeholder="Enter expected salary"
+              min = "0"
             />
           </div>
           <fieldset>
