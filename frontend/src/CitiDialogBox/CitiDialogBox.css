@@ -1,0 +1,58 @@
+.cities-dialog-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Darken the backdrop for better focus on the dialog */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Ensure it's on top */
+  }
+  
+  .cities-dialog-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px; /* Soften the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    width: auto;
+    max-width: 500px; /* Limit the maximum width */
+    text-align: center;
+  }
+  
+  .cities-dialog-box h2 {
+    margin-bottom: 20px; /* Add space below the title */
+    color: #333; /* Dark gray for better readability */
+    font-size: 1.5em; /* Make the title larger */
+  }
+  
+  .cities-dialog-box ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0 0 20px; /* Add some space below the list */
+  }
+  
+  .cities-dialog-box li {
+    background-color: #000000; /* Light background for each city */
+    margin-bottom: 10px; /* Space out the cities */
+    padding: 10px; /* Padding inside each city */
+    border-radius: 5px; /* Soften the corners of each city */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for each city */
+  }
+  
+  .cities-dialog-box button {
+    font-size: 1em; /* Increase font size */
+    padding: 10px 20px; /* Larger clickable area */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Text color for button */
+    border: none;
+    border-radius: 5px; /* Round the button corners */
+    cursor: pointer;
+    transition: background-color 0.2s; /* Smooth transition for hover effect */
+  }
+  
+  .cities-dialog-box button:hover {
+    background-color: #0056b3; /* Darken button on hover */
+  }
+  
