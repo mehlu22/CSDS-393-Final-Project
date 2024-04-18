@@ -6,44 +6,55 @@ import bg_image from "./images/bg_img.png";
 import git_img from "./images/github_logo.png";
 import CompanyDialogBox from './CompanyDialogBox/CompanyDialogBox';
 import CityDetailsDialogBox from './CitiesDetailsDialogBox/CityDetailsDialogBox';
-
+import NeighborhoodDialogBox from './NeighborhoodDialogBox/NeighborhoodDialogBox';
+import NeighborhoodListDialogBox from './NeighborhoodListDialogBox/NeighborhoodListDialogBox';
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isCitiesDialogOpen, setIsCitiesDialogOpen] = useState(false);
   const [isCityDetailsOpen, setIsCityDetailsOpen] = useState(false);
   const [isCompanyDialogOpen, setIsCompanyDialogOpen] = useState(false);
+  const [isNeighborhoodDialogOpen, setIsNeighborhoodDialogOpen] = useState(false);
+  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState('');
+  const [isNeighborhoodListOpen, setIsNeighborhoodListOpen] = useState(false);
 
-  const handleDialogClose = () => {
-    setIsDialogOpen(false);
-  };
 
-  const handleCitiesDialogClose = () => {
-    setIsCitiesDialogOpen(false);
-  };
-
-  const handleCityDetailsClose = () => {
-    setIsCityDetailsOpen(false);
-  };
-
-  const handleCompanyDialogClose = () => {
-    setIsCompanyDialogOpen(false);
-  };
+  const handleDialogClose = () => setIsDialogOpen(false);
+  const handleCitiesDialogClose = () => setIsCitiesDialogOpen(false);
+  const handleCityDetailsClose = () => setIsCityDetailsOpen(false);
+  const handleCompanyDialogClose = () => setIsCompanyDialogOpen(false);
+  const handleNeighborhoodDialogClose = () => setIsNeighborhoodDialogOpen(false);
 
   const handleFormSubmit = () => {
-    setIsDialogOpen(false); // Close the filter dialog
-    setIsCitiesDialogOpen(true); // Open the cities dialog
+    setIsDialogOpen(false);
+    setIsCitiesDialogOpen(true);
   };
 
   const handleCitySelection = (city) => {
+    setSelectedCity(city);
     setIsCitiesDialogOpen(false);
-    setIsCityDetailsOpen(true); // Transition to city details dialog
+    setIsCityDetailsOpen(true);
   };
 
   const handleCityDetailsSubmit = () => {
     setIsCityDetailsOpen(false);
-    setIsCompanyDialogOpen(true); // Open company dialog upon city details submission
+    setIsCompanyDialogOpen(true);
   };
+
+  const handleCompanySelection = (company) => {
+    setSelectedCompany(company);
+    setIsCompanyDialogOpen(false);
+    setIsNeighborhoodDialogOpen(true);
+
   
+  };
+  const handleNeighborhoodDialogSubmit = () => {
+    setIsNeighborhoodListOpen(true); // Show neighborhood list dialog on submit
+  };
+
+  const handleNeighborhoodListClose = () => {
+    setIsNeighborhoodListOpen(false);
+  };
 
   return (
     <div className="App" style={{backgroundImage:`url(${bg_image})`}}>
@@ -69,8 +80,10 @@ function App() {
       {isDialogOpen && <DialogBox onClose={handleDialogClose} onSubmit={handleFormSubmit} />}
       {isCitiesDialogOpen && <CitiesDialogBox onClose={handleCitiesDialogClose} onCitySelect={handleCitySelection} />}
       {isCityDetailsOpen && <CityDetailsDialogBox onClose={handleCityDetailsClose} onSubmit={handleCityDetailsSubmit} />}
-      {isCompanyDialogOpen && <CompanyDialogBox onClose={handleCompanyDialogClose} />}
-      
+      {isCompanyDialogOpen && <CompanyDialogBox onClose={handleCompanyDialogClose} onSelectCompany={handleCompanySelection} />}
+      {isNeighborhoodDialogOpen && <NeighborhoodDialogBox city={selectedCity} company={selectedCompany} onClose={handleNeighborhoodDialogClose} onSubmit={handleNeighborhoodDialogSubmit} />}
+      {isNeighborhoodListOpen && <NeighborhoodListDialogBox onClose={handleNeighborhoodListClose} />}
+
     </div>
   );
 }

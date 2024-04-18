@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './CompanyDialogBox.css'; // Ensure the CSS file is correctly linked
+import './CompanyDialogBox.css'; // Ensure CSS is properly linked
 
-function CompanyDialogBox({ onClose }) {
+function CompanyDialogBox({ onClose, onSelectCompany }) {
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function CompanyDialogBox({ onClose }) {
     <div className="company-dialog-backdrop">
       <div className="company-dialog-box">
         {companies.map((company, index) => (
-          <button key={index} className="company-btn" onClick={() => console.log(company)}>
+          <button key={index} className="company-btn" onClick={() => onSelectCompany(company)}>
             {company}
           </button>
         ))}
