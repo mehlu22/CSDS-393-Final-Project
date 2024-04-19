@@ -4,34 +4,49 @@ import DialogBox from './Dialogbox/DialogBox'; // Adjust the path as necessary
 import CitiesDialogBox from './CitiDialogBox/CitiDialogBox';
 import bg_image from "./images/bg_img.png";
 import git_img from "./images/github_logo.png";
+import CompanyDialogBox from './CompanyDialogBox/CompanyDialogBox';
+import CityDetailsDialogBox from './CitiesDetailsDialogBox/CityDetailsDialogBox';
+
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isCitiesDialogOpen, setIsCitiesDialogOpen] = useState(false);
-  const [cities, setCities] = useState([]);
-  const [isDataReady, setIsDataReady] = useState(false); 
-  // Handles closing the filter dialog box
+  const [isCityDetailsOpen, setIsCityDetailsOpen] = useState(false);
+  const [isCompanyDialogOpen, setIsCompanyDialogOpen] = useState(false);
+
   const handleDialogClose = () => {
     setIsDialogOpen(false);
-    setIsDataReady(false)
   };
 
-  // Handles closing the cities dialog box
   const handleCitiesDialogClose = () => {
     setIsCitiesDialogOpen(false);
   };
 
-  // Handles the submission of the filter dialog box,
-  // which in turn opens the cities dialog box
-  const handleFormSubmit = (citiesData) => {
+  const handleCityDetailsClose = () => {
+    setIsCityDetailsOpen(false);
+  };
+
+  const handleCompanyDialogClose = () => {
+    setIsCompanyDialogOpen(false);
+  };
+
+  const handleFormSubmit = () => {
     setIsDialogOpen(false); // Close the filter dialog
     setIsCitiesDialogOpen(true); // Open the cities dialog
-    setCities(citiesData)
-    setIsDataReady(true)
   };
+
+  const handleCitySelection = (city) => {
+    setIsCitiesDialogOpen(false);
+    setIsCityDetailsOpen(true); // Transition to city details dialog
+  };
+
+  const handleCityDetailsSubmit = () => {
+    setIsCityDetailsOpen(false);
+    setIsCompanyDialogOpen(true); // Open company dialog upon city details submission
+  };
+  
 
   return (
     <div className="App" style={{backgroundImage:`url(${bg_image})`}}>
-
       <div className="top-panel">
         <button id="searchBtn" onClick={() => setIsDialogOpen(true)}>Search</button>
         <button id="aboutBtn">About</button>
@@ -40,8 +55,8 @@ function App() {
       <h1 onClick={() => setIsDialogOpen(true)}>Find your perfect city with a click</h1>
       <div className="bottom-panel">
         <div className="bottom-left">
-        <a href="https://github.com/mehlu22/CSDS-393-Final-Project/" target="_blank" rel="noopener noreferrer">
-            GitHub Repo <img src= {git_img}  alt="GitHub" />
+          <a href="https://github.com/mehlu22/CSDS-393-Final-Project/" target="_blank" rel="noopener noreferrer">
+          GitHub Repo <img src= {git_img}  alt="GitHub" />
           </a>
         </div>
         <div className="bottom-center">
@@ -52,7 +67,10 @@ function App() {
         </div>
       </div>
       {isDialogOpen && <DialogBox onClose={handleDialogClose} onSubmit={handleFormSubmit} />}
-      {isCitiesDialogOpen && <CitiesDialogBox cities = {cities} onClose={handleCitiesDialogClose} />}
+      {isCitiesDialogOpen && <CitiesDialogBox onClose={handleCitiesDialogClose} onCitySelect={handleCitySelection} />}
+      {isCityDetailsOpen && <CityDetailsDialogBox onClose={handleCityDetailsClose} onSubmit={handleCityDetailsSubmit} />}
+      {isCompanyDialogOpen && <CompanyDialogBox onClose={handleCompanyDialogClose} />}
+      
     </div>
   );
 }
