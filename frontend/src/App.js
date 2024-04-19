@@ -3,23 +3,18 @@ import './App.css';
 import DialogBox from './Dialogbox/DialogBox'; // Adjust the path as necessary
 import CitiesDialogBox from './CitiDialogBox/CitiDialogBox';
 import bg_image from "./images/bg_img.png";
-import git_img from "./images/github_logo.png"; <<
-<< << < HEAD
-    ===
-    === =
-
-    >>>
-    >>> > 8 c7a0146f55715d22eb1955351d834340eb85c73
+import git_img from "./images/github_logo.png";
 
 function App() {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [isCitiesDialogOpen, setIsCitiesDialogOpen] = useState(false);
     const [cities, setCities] = useState([]);
     const [isDataReady, setIsDataReady] = useState(false);
+
     // Handles closing the filter dialog box
     const handleDialogClose = () => {
         setIsDialogOpen(false);
-        setIsDataReady(false)
+        setIsDataReady(false);
     };
 
     // Handles closing the cities dialog box
@@ -32,20 +27,15 @@ function App() {
     const handleFormSubmit = (citiesData) => {
         setIsDialogOpen(false); // Close the filter dialog
         setIsCitiesDialogOpen(true); // Open the cities dialog
-        setCities(citiesData)
-        setIsDataReady(true)
+        setCities(citiesData);
+        setIsDataReady(true);
     };
 
     return ( <
             div className = "App"
             style = {
                 { backgroundImage: `url(${bg_image})` } } >
-            <<
-            << << < HEAD
-
-            ===
-            === = >>>
-            >>> > 8 c7a0146f55715d22eb1955351d834340eb85c73 <
+            <
             div className = "top-panel" >
             <
             button id = "searchBtn"
