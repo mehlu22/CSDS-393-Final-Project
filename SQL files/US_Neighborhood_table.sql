@@ -74,8 +74,22 @@ INSERT INTO US_NEIGHBORHOOD_DATA (City, Locality, CostOfLiving, CrimeRate, Publi
     ('New York', 'SoHo', 2300000, 12651, 86, 67, 89),
     ('New York', 'Chelsea', 2252500, 5642, 89, 78, 25), 
     ('New York', 'Flushing', 661815, 4074, 92, 52, 77),
-    ('New York', 'Tribeca', 3410000, 8017, 89, 81, 14);
-
+    ('New York', 'Tribeca', 3410000, 8017, 89, 81, 14),
+    ('Philadelphia', 'Kensington', 152500, 6944, 70, 82, 56), 
+    ('Philadelphia', 'Fishtown', 399000, 6931, 65, 73, 78),
+    ('Philadelphia', 'Wharton Hawthorn Bella Vista', 670000, 3097, 67, 94, 33),
+    ('Philadelphia', 'Chestnut Hill', 720000, 2075, 66, 46, 72), 
+    ('Philadelphia', 'Germantown', 215500, 7297, 68, 85, 19), 
+    ('Phoenix', 'Central City', 420000, 9212, 35, 63, 87), 
+    ('Phoenix', 'Paradise Valley', 3250000, 1524, 33, 88, 41),
+    ('Phoenix', 'Laveen', 439990, 3358, 39, 76, 55),
+    ('Phoenix', 'Alhambra', 360000, 6216, 36, 42, 92),
+    ('Phoenix', 'Maryvale', 350000, 3929, 38, 95, 20), 
+    ('Portland', 'Pearl District', 400000, 4761, 48, 94, 67),
+    ('Portland', 'Boise', 502000, 6570, 49, 63, 22),
+    ('Portland', 'Bridgeton', 242500, 9804, 52, 78, 85),
+    ('Portland', 'King', 590000, 5321, 47, 36, 94),
+    ('Portland', 'Parkrose', 356500, 9599, 49, 75, 15);
 
 
 
