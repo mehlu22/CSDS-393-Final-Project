@@ -44,7 +44,22 @@ INSERT INTO US_NEIGHBORHOOD_DATA (City, Locality, CostOfLiving, CrimeRate, Publi
     ('Denver', 'Five Points', 575000, 4846, 40, 75, 85),
     ('Denver', 'Golden Triangle', 590000, 2999, 50, 80, 85),
     ('Denver', 'Cherry Creek', 1630000, 9437, 45, 85, 90),
-    ('Denver', 'Washington Park', 1067500, 5869, 50, 90, 95);
+    ('Denver', 'Washington Park', 1067500, 5869, 50, 90, 95),
+    ('Houston', 'Montrose', 272500, 10387, 30, 75, 80),
+    ('Houston', 'River Oaks', 1680000, 4690, 35, 80, 85),
+    ('Houston', 'Greater Heights', 641500, 6664, 29, 70, 75), 
+    ('Houston', 'Rice Village', 481000, 6102, 40, 85, 90),
+    ('Houston', 'Meyerland', 449000, 4639, 30, 65, 70),
+    ('Indianapolis', 'Wynnedale', 301000, 747, 30, 65, 70),
+    ('Indianapolis', 'Decatur', 247000, 1953, 25, 70, 75),
+    ('Indianapolis', 'Eagledale', 139950, 3638, 35, 60, 65),
+    ('Indianapolis', 'Devington', 185000, 9333, 30, 55, 60),
+    ('Indianapolis', 'Beech Grove', 198000, 2986, 40, 75, 80),
+    ('Los Angeles', 'Beverly Hills', 3022500, 4874, 50, 70, 80),
+    ('Los Angeles', 'Silver Lake', 1444500, 3032, 56, 75, 70),
+    ('Los Angeles', 'Los Feliz', 1900000, 2830, 60, 80, 75),
+    ('Los Angeles', 'Manhattan Beach', 2350000, 1060, 45, 60, 65),
+    ('Los Angeles', 'Venice', 1700000, 5862, 60, 65, 70);
 
 
 
