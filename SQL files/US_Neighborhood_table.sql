@@ -59,7 +59,23 @@ INSERT INTO US_NEIGHBORHOOD_DATA (City, Locality, CostOfLiving, CrimeRate, Publi
     ('Los Angeles', 'Silver Lake', 1444500, 3032, 56, 75, 70),
     ('Los Angeles', 'Los Feliz', 1900000, 2830, 60, 80, 75),
     ('Los Angeles', 'Manhattan Beach', 2350000, 1060, 45, 60, 65),
-    ('Los Angeles', 'Venice', 1700000, 5862, 60, 65, 70);
+    ('Los Angeles', 'Venice', 1700000, 5862, 60, 65, 70),
+    ('Miami', 'Aventura', 587500, 4506, 56, 68, 56),
+    ('Miami', 'Pinecrest', 2812500, 1825, 58, 90, 72),
+    ('Miami', 'Coconut Grove', 1500000, 2097, 55, 55, 20), 
+    ('Miami', 'Coral Gables', 1305000, 840, 59, 72, 87), 
+    ('Miami', 'Edgewater', 690000, 2257, 54, 40, 33), 
+    ('Nashville', 'Germantown', 578915, 1971, 71, 47, 56),
+    ('Nashville', 'Hermitage Hills', 344750, 1297, 71, 62, 92),
+    ('Nashville', 'Sylvan Park', 636500, 8402, 72, 85, 14),
+    ('Nashville', 'Midtown', 1060000,1369, 74, 73, 65),
+    ('Nashville', 'Bellmont Hillsboro', 1205000, 3538, 76, 91, 41),
+    ('New York', 'Harlem', 987500, 4366, 88, 94, 48),
+    ('New York', 'SoHo', 2300000, 12651, 86, 67, 89),
+    ('New York', 'Chelsea', 2252500, 5642, 89, 78, 25), 
+    ('New York', 'Flushing', 661815, 4074, 92, 52, 77),
+    ('New York', 'Tribeca', 3410000, 8017, 89, 81, 14);
+
 
 
 
