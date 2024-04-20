@@ -8,3 +8,43 @@ CREATE TABLE US_NEIGHBORHOOD_DATA (
     PublicSchoolRating INT,
     PRIMARY KEY (City, Locality),
 );
+
+INSERT INTO US_NEIGHBORHOOD_DATA (City, Locality, CostOfLiving, CrimeRate, PublicTransportation, EnvironmentalRating, PublicSchoolRating) VALUES
+    ('Austin', 'Bryker Woods', 2050000, 2925, 38, 75, 80),
+    ('Austin', 'Ridgetop', 440000, 3590, 35, 70, 75),
+    ('Austin', 'Rosedale', 949900, 3045, 40, 80, 80),
+    ('Austin', 'Shoal Crest', 999000, 5510, 35, 70, 75),
+    ('Austin', 'Zilker', 930500, 7131, 42, 85, 85),
+    ('Boston', 'Hyde Park', 589000, 1567, 65, 50, 70),
+    ('Boston', 'Dorchester', 723000, 3695, 70, 55, 60),
+    ('Boston', 'Allston', 682500, 1381, 80, 70, 75),
+    ('Boston', 'Brighton', 557500, 1381, 65, 70, 65),
+    ('Boston', 'Charlestown', 935000, 1732, 85, 80, 80),
+    ('Charlotte', 'Myers Park', 1507500, 1959, 20, 75, 80),
+    ('Charlotte', 'Foxcroft', 1250000, 2668, 22, 70, 85),
+    ('Charlotte', 'Eastover', 1702500, 2187, 25, 80, 90),
+    ('Charlotte', 'Colonial Village', 528000, 2540, 22, 65, 75),
+    ('Charlotte', 'Commonwealth', 499000, 1840, 27, 85, 95),
+    ('Chicago', 'Chinatown', 275000, 2655, 70, 60, 65),
+    ('Chicago', 'Lincoln Park', 688000, 2930, 85, 75, 80),
+    ('Chicago', 'Hyde Park', 195000, 2591, 80, 70, 85),
+    ('Chicago', 'Loop', 387250, 13591, 90, 95, 90),
+    ('Chicago', 'Oakland', 361000, 4766, 65, 55, 50),
+    ('Cleveland', 'Lakewood', 280250, 1479, 45, 70, 80),
+    ('Cleveland', 'Tremont', 422500, 2372, 30, 75, 75),
+    ('Cleveland', 'University Circle', 410000, 2674, 55, 80, 90),
+    ('Cleveland', 'Edgewater', 131000, 3815, 45, 60, 70),
+    ('Cleveland', 'Old Brooklyn', 155000, 4985, 50, 65, 70),
+    ('Dallas', 'Preston Hollow', 927000, 5139, 35, 70, 80),
+    ('Dallas', 'Oak Lawn', 555000, 6104, 40, 75, 80),
+    ('Dallas', 'Lakewood Village', 1155000, 1104, 30, 65, 75),
+    ('Dallas', 'Far North', 562500, 2868, 30, 60, 70),
+    ('Dallas', 'Lake Highlands', 540000, 4944, 35, 70, 80),
+    ('Denver', 'Capitol Hill', 390000, 7939, 45, 70, 80),
+    ('Denver', 'Five Points', 575000, 4846, 40, 75, 85),
+    ('Denver', 'Golden Triangle', 590000, 2999, 50, 80, 85),
+    ('Denver', 'Cherry Creek', 1630000, 9437, 45, 85, 90),
+    ('Denver', 'Washington Park', 1067500, 5869, 50, 90, 95);
+
+
+
