@@ -32,10 +32,10 @@ def find_job(city, profession, expected_salary):
 
     return sorted_jobs[['City', 'Organization', 'Exp_Sal', 'Type']].head(1)
 
-# Example usage
-profession = 'doctor'
-city = 'Cleveland'
-expected_salary = 90000
-job_recommendation = find_job(city, profession, expected_salary)
-print("Recommended Job:")
-print(job_recommendation)
+# # Example usage
+# profession = 'doctor'
+# city = 'Cleveland'
+# expected_salary = 90000
+# job_recommendation = find_job(city, profession, expected_salary)
+# print("Recommended Job:")
+# print(job_recommendation)
