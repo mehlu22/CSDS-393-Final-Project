@@ -34,7 +34,7 @@ def find_job(city, profession, expected_salary):
 
 # Example usage
 profession = 'doctor'
-city = 'Austin'
+city = 'Cleveland'
 expected_salary = 90000
 job_recommendation = find_job(city, profession, expected_salary)
 print("Recommended Job:")
