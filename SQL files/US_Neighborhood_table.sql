@@ -4,7 +4,7 @@ CREATE TABLE US_NEIGHBORHOOD_DATA (
     CostOfLiving INT,
     CrimeRate INT,
     PublicTransportation INT,
-    DistanceToWork INT,
-    DistanceToSchool INT,
+    EnvironmentalRating INT,
+    PublicSchoolRating INT,
     PRIMARY KEY (City, Locality),
 );
