@@ -19,3 +19,6 @@ city_data = pd.DataFrame({
     'City': ['Austin', 'Boston', 'Charlotte', 'Chicago', 'Cleveland']
 })
 
+# Map the text for political affiliations
+affiliation_mapping = {'Democrat': 1, 'Republican': 0, 'Neutral': -1}
+
