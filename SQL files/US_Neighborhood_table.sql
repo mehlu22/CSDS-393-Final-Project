@@ -89,7 +89,29 @@ INSERT INTO US_NEIGHBORHOOD_DATA (City, Locality, CostOfLiving, CrimeRate, Publi
     ('Portland', 'Boise', 502000, 6570, 49, 63, 22),
     ('Portland', 'Bridgeton', 242500, 9804, 52, 78, 85),
     ('Portland', 'King', 590000, 5321, 47, 36, 94),
-    ('Portland', 'Parkrose', 356500, 9599, 49, 75, 15);
+    ('Portland', 'Parkrose', 356500, 9599, 49, 75, 15),
+    ('San Diego', 'La Jolla', 2265000, 1961, 35, 72, 76),
+    ('San Diego', 'Pacific Beach', 1750000, 4899, 40, 86, 48),
+    ('San Diego', 'Mission Bay', 995000, 1947, 37, 55, 92),
+    ('San Diego', 'Old Town', 699000, 4829, 34, 62, 18), 
+    ('San Diego', 'Mission Hills', 1484000, 1305, 36, 93, 34), 
+    ('San Francisco', 'North Beach', 1285000, 6051, 80, 90, 77),
+    ('San Francisco', 'Chinatown', 650000, 6923, 75, 59, 42),
+    ('San Francisco', 'Nob Hill', 1112500, 4090, 78, 83, 65),
+    ('San Francisco', 'SoMa', 722000, 7311, 74, 47, 91),
+    ('San Francisco', 'Potrero Hill', 1300000, 9706, 79, 70, 20), 
+    ('Seattle', 'Ballard', 855000, 8128, 57, 85, 68),
+    ('Seattle', 'Fremont', 836000, 5394, 60, 71, 47),
+    ('Seattle', 'Magnolia', 1062500, 2393, 63, 42, 79), 
+    ('Seattle', 'Ravenna', 1084000, 2470, 56, 93, 23),
+    ('Seattle', 'Queen Anne', 974500, 2874, 59, 65, 86),
+    ('Washington D.C', 'Georgetown', 1725000, 5984, 95, 73, 45),
+    ('Washington D.C', 'Takoma Park', 606250, 3444, 97, 82, 64), 
+    ('Washington D.C', 'Shaw', 780000, 6960, 96, 55, 91), 
+    ('Washington D.C', 'Foggy Bottom', 268000, 4130, 99, 69, 17),
+    ('Washington D.C', 'Adams Morgan', 435000, 2820, 95, 88, 36);
+
+
 
 
 
