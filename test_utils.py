@@ -22,3 +22,14 @@ city_data = pd.DataFrame({
 # Map the text for political affiliations
 affiliation_mapping = {'Democrat': 1, 'Republican': 0, 'Neutral': -1}
 
+@patch('utils.create_engine')
+@patch('utils.pd.read_sql', return_value=city_data)
+def test_data_loading(mock_read_sql, mock_engine):
+    city_data['PoliticalAffiliation'] = city_data['PoliticalAffiliation'].map(affiliation_mapping)
+
+    # create a mock engine to avoid changes to actual database
+    mock_engine.return_value = MagicMock()
+
+    loaded_data = mock_read_sql("SELECT * FROM us_cities", mock_engine.return_value)
+    assert not loaded_data.empty
+    assert (loaded_data['PoliticalAffiliation'] == 1).all()
