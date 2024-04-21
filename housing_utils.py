@@ -35,3 +35,15 @@ def predict_top_localities(city, features, n=2):
 
     X_train, _, y_train, _ = train_test_split(X_city, y_city, test_size=0.3, random_state=42)
 
+    # ML pipeline
+    pipeline = make_pipeline(
+        StandardScaler(), 
+        MLPClassifier(hidden_layer_sizes=(100,), max_iter=300, activation='relu', solver='adam', random_state=1)
+    )
+    pipeline.fit(X_train, y_train)
+    
+    features_df = pd.DataFrame([features], columns=['CostOfLiving', 'CrimeRate', 'PublicTransportation', 'EnvironmentalRating', 'PublicSchoolRating'])
+    probabilities = pipeline.predict_proba(features_df)
+    classes = pipeline.classes_
+    top_localities = sorted(zip(classes, probabilities[0]), key=lambda x: x[1], reverse=True)[:n]
+    return [locality for locality, prob in top_localities]
