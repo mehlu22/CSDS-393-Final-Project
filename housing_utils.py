@@ -47,3 +47,9 @@ def predict_top_localities(city, features, n=2):
     classes = pipeline.classes_
     top_localities = sorted(zip(classes, probabilities[0]), key=lambda x: x[1], reverse=True)[:n]
     return [locality for locality, prob in top_localities]
+
+# Example usage
+city = 'Austin'
+user_input = [450000, 3590, 35, 70, 35]
+top_localities = predict_top_localities(city, user_input, 2)
+print("Top 2 Predicted Localities for", city, ":", top_localities)
