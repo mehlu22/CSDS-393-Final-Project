@@ -24,7 +24,7 @@
   .cities-dialog-box h2 {
     margin-bottom: 20px; /* Add space below the title */
     color: #333; /* Dark gray for better readability */
-    font-size: 1.5em; /* Make the title larger */
+    font-size: 30px; /* Make the title larger */
   }
   
   .cities-dialog-box ul {
@@ -34,7 +34,8 @@
   }
   
   .cities-dialog-box li {
-    background-color: #000000; /* Light background for each city */
+    font-size: 24px;
+    background-color: #5e5e5e; /* Light background for each city */
     margin-bottom: 10px; /* Space out the cities */
     padding: 10px; /* Padding inside each city */
     border-radius: 5px; /* Soften the corners of each city */
