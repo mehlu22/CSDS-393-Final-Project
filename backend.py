@@ -54,14 +54,16 @@ def jobs():
     
 
 
-'''#Feature 3
+#Feature 3
 @app.route('/neighborhoods', methods=['GET', 'POST'])
-def jobs():
+def neighborhoods():
 
     if request.method == 'POST':
         data = request.json
-        features = list(data.values())
-        print(features)
+        print(data)
+        features = [None, None]
+        features[0] = data[0]
+        features[1] = list(data[1].values())
         stored_neighborhoods = predict_top_localities(features[0], features[1])
         print(stored_neighborhoods)
         return jsonify(stored_neighborhoods), 200
@@ -69,7 +71,7 @@ def jobs():
     elif request.method == 'GET':
         if not stored_neighborhoods:
             return jsonify({"error": "No cities have been determined yet. Please make a POST request first."}), 400
-        return jsonify(stored_neighborhoods)'''
+        return jsonify(stored_neighborhoods)
     
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
