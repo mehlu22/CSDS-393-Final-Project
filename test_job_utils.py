@@ -31,3 +31,6 @@ def test_find_job():
         result = find_job('Austin', 'software developer', 105000)
         assert not result.empty
         assert result.iloc[0]['Organization'] == 'Cloudflare Consulting'
+
+if __name__ == "__main__":
+    pytest.main()
