@@ -1,20 +1,42 @@
 import React, { useState } from 'react';
 import './CityDetailsDialogBox.css'; // Ensure CSS is properly linked
 
-function CityDetailsDialogBox({ city, onClose }) {
+function CityDetailsDialogBox({ city, onClose, onSubmit }) {
   const [profession, setProfession] = useState('Software Engineer');
   const [expectedSalary, setExpectedSalary] = useState('');
   const [type, setType] = useState('In-person');
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // Here, you would handle the submission logic
+    const formData = {
+      city: String(city),
+      profession: String(profession),
+      expectedSalary: Number(expectedSalary),
+
+    };
     console.log({
-      city,
-      profession,
-      expectedSalary,
-      type
+      formData
     });
-    onClose(); // Optionally close the dialog upon submission
+    try {
+      const response = await fetch('http://localhost:5000/jobs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const result = await response.json();
+      console.log("Received Company", result); // Log the success message
+      onSubmit(result);
+    } catch (error) {
+      console.error("Failed to submit form data", error);
+    }
+    onClose();
   };
 
   return (
@@ -38,6 +60,7 @@ function CityDetailsDialogBox({ city, onClose }) {
               value={expectedSalary}
               onChange={(e) => setExpectedSalary(e.target.value)}
               placeholder="Enter expected salary"
+              min = "0"
             />
           </div>
           <fieldset>

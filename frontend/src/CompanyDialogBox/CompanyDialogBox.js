@@ -1,26 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import './CompanyDialogBox.css'; // Make sure to create and link the CSS file
 
-function CompanyDialogBox({ onClose }) {
+function CompanyDialogBox({company, onClose, onSelectCompany }) {
   const [companies, setCompanies] = useState([]);
-
   useEffect(() => {
-    pickRandomCompanies();
+    setCompanies([company])
   }, []);
 
-  const pickRandomCompanies = () => {
-    const allCompanies = ['Amazon', 'UHS', 'Apple', 'IDR', 'Fortis Hospital', 'Zuckerberg International Hospital', 'Blackrock', 'Meta', 'Goldman Sachs'];
-    let shuffled = allCompanies.sort(() => 0.5 - Math.random());
-    setCompanies(shuffled.slice(0, 3));
-  };
 
   return (
     <div className="company-dialog-backdrop">
       <div className="company-dialog-box">
+      <h2 style={{ fontSize: '30px', color: '#333', marginBottom: '20px' }}>Selected Company</h2>
         {companies.map((company, index) => (
-          <button key={index} className="company-btn" onClick={() => console.log(company)}>
-            {company}
-          </button>
+           <button key={index} className="company-btn" onClick={() => onSelectCompany(company)}>
+           {company}
+         </button>
         ))}
         <button className="close-btn" onClick={onClose}>Close</button>
       </div>
