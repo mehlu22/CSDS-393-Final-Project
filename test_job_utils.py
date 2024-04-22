@@ -12,3 +12,18 @@ mock_job_data = pd.DataFrame({
     'Profession': ['Software Developer', 'Consultant', 'Software Developer', 'Consultant'],
     'Type': ['Hybrid', 'Hybrid', 'Remote', 'Remote']
 })
+
+@patch('job_utils.pd.read_sql')
+@patch('job_utils.create_engine')
+
+def test_load_job_data(mock_engine, mock_read_sql):
+    # creating a mock engine of the local database so to not mess with the actual database
+    mock_read_sql.return_value = mock_job_data
+    mock_engine.return_value = MagicMock()
+    # test the first function in the code to load in the data and required metrics from the mysql database
+    data = load_job_data()
+    assert not data.empty
+    assert len(data) == 4
+
+def test_find_job():
+    with patch('job_utils.job_data', mock_job_data):
