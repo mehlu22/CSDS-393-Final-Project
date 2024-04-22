@@ -12,3 +12,6 @@ mock_job_data = pd.DataFrame({
     'Profession': ['Software Developer', 'Consultant', 'Software Developer', 'Consultant'],
     'Type': ['Hybrid', 'Hybrid', 'Remote', 'Remote']
 })
+
+@patch('job_utils.pd.read_sql')
+@patch('job_utils.create_engine')
