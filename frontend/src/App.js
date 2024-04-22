@@ -4,32 +4,54 @@ import DialogBox from './Dialogbox/DialogBox'; // Adjust the path as necessary
 import CitiesDialogBox from './CitiDialogBox/CitiDialogBox';
 import bg_image from "./images/bg_img.png";
 import git_img from "./images/github_logo.png";
+import CompanyDialogBox from './CompanyDialogBox/CompanyDialogBox';
+import CityDetailsDialogBox from './CitiesDetailsDialogBox/CityDetailsDialogBox';
+
 
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isCitiesDialogOpen, setIsCitiesDialogOpen] = useState(false);
   const [cities, setCities] = useState([]);
-  const[isDataReady, setIsDataReady] = useState(false);
+  const [company, setCompany] = useState();
+  const[isCityDetailsOpen, setIsCityDetailsOpen] = useState(false)
+  const[isCompanyDialogOpen, setIsCompanyDialogOpen] = useState(false)
 
-  // Handles closing the filter dialog box
-  const handleDialogClose = () => {
-    setIsDialogOpen(false);
-    setIsDataReady(false);
-  };
+  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState('');
 
-  // Handles closing the cities dialog box
-  const handleCitiesDialogClose = () => {
-    setIsCitiesDialogOpen(false);
-  };
 
-  // Handles the submission of the filter dialog box,
-  // which in turn opens the cities dialog box
+  const handleDialogClose = () => setIsDialogOpen(false);
+  const handleCitiesDialogClose = () => setIsCitiesDialogOpen(false);
+  const handleCityDetailsClose = () => setIsCityDetailsOpen(false);
+  const handleCompanyDialogClose = () => setIsCompanyDialogOpen(false);
+  
+  
   const handleFormSubmit = (citiesData) => {
-    setIsDialogOpen(false); // Close the filter dialog
-    setIsCitiesDialogOpen(true); // Open the cities dialog
+    setIsDialogOpen(false); 
+    setIsCitiesDialogOpen(true); 
     setCities(citiesData);
-    setIsDataReady(true);
   };
+
+  const handleCitySelection = (city) => {
+    setSelectedCity(city);
+    setIsCitiesDialogOpen(false);
+    setIsCityDetailsOpen(true);
+  }
+
+  const handleCityDetailsSubmit = (company) => {
+    setCompany(company);
+    setIsCityDetailsOpen(false);
+    setIsCompanyDialogOpen(true);
+  }
+
+  const handleCompanySelection = (company) => {
+    setSelectedCompany(company);
+    setIsCompanyDialogOpen(false);
+  }
+
+  
+
+  
 
   return (
     <div className="App" style={{backgroundImage:`url(${bg_image})`}}>
@@ -53,7 +75,9 @@ function App() {
         </div>
       </div>
       {isDialogOpen && <DialogBox onClose={handleDialogClose} onSubmit={handleFormSubmit} />}
-      {isCitiesDialogOpen && <CitiesDialogBox cities = {cities} onClose={handleCitiesDialogClose} />}
+      {isCitiesDialogOpen && <CitiesDialogBox cities = {cities} onCitySelect={handleCitySelection} onClose={handleCitiesDialogClose} />}
+      {isCityDetailsOpen && <CityDetailsDialogBox city = {selectedCity} onClose = {handleCityDetailsClose} onSubmit = {handleCityDetailsSubmit} />}
+      {isCompanyDialogOpen && <CompanyDialogBox company = {company} onClose = {handleCompanyDialogClose} onSelectCompany={handleCompanySelection} />}
     </div>
   );
 }
