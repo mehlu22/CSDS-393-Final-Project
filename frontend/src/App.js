@@ -8,6 +8,7 @@ import CompanyDialogBox from './CompanyDialogBox/CompanyDialogBox';
 import CityDetailsDialogBox from './CitiesDetailsDialogBox/CityDetailsDialogBox';
 import NeighborhoodDialogBox from './NeighborhoodDialogBox/NeighborhoodDialogBox';
 import NeighborhoodListDialogBox from './NeighborhoodListDialogBox/NeighborhoodListDialogBox';
+import AboutDialogBox from './AboutDialogBox/AboutDialogBox';
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isCitiesDialogOpen, setIsCitiesDialogOpen] = useState(false);
@@ -17,6 +18,8 @@ function App() {
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedCompany, setSelectedCompany] = useState('');
   const [isNeighborhoodListOpen, setIsNeighborhoodListOpen] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+
 
 
   const handleDialogClose = () => setIsDialogOpen(false);
@@ -24,6 +27,9 @@ function App() {
   const handleCityDetailsClose = () => setIsCityDetailsOpen(false);
   const handleCompanyDialogClose = () => setIsCompanyDialogOpen(false);
   const handleNeighborhoodDialogClose = () => setIsNeighborhoodDialogOpen(false);
+  const handleAbout = () => {setShowAbout(true); };
+
+  const closeAbout = () => {   setShowAbout(false);  };
 
   const handleFormSubmit = () => {
     setIsDialogOpen(false);
@@ -58,9 +64,9 @@ function App() {
 
   return (
     <div className="App" style={{backgroundImage:`url(${bg_image})`}}>
-      <div className="top-panel">
+           <div className="top-panel">
         <button id="searchBtn" onClick={() => setIsDialogOpen(true)}>Search</button>
-        <button id="aboutBtn">About</button>
+        <button id="aboutBtn" onClick={handleAbout}>About</button>
         <button id="contactBtn">Contact</button>
       </div>
       <h1 onClick={() => setIsDialogOpen(true)}>Find your perfect city with a click</h1>
@@ -77,12 +83,15 @@ function App() {
           <a href="/contact" className="contact-link">Contact</a>
         </div>
       </div>
+  
       {isDialogOpen && <DialogBox onClose={handleDialogClose} onSubmit={handleFormSubmit} />}
       {isCitiesDialogOpen && <CitiesDialogBox onClose={handleCitiesDialogClose} onCitySelect={handleCitySelection} />}
       {isCityDetailsOpen && <CityDetailsDialogBox onClose={handleCityDetailsClose} onSubmit={handleCityDetailsSubmit} />}
       {isCompanyDialogOpen && <CompanyDialogBox onClose={handleCompanyDialogClose} onSelectCompany={handleCompanySelection} />}
       {isNeighborhoodDialogOpen && <NeighborhoodDialogBox city={selectedCity} company={selectedCompany} onClose={handleNeighborhoodDialogClose} onSubmit={handleNeighborhoodDialogSubmit} />}
       {isNeighborhoodListOpen && <NeighborhoodListDialogBox onClose={handleNeighborhoodListClose} />}
+      {showAbout && <AboutDialogBox onClose={closeAbout} />}
+
 
     </div>
   );
