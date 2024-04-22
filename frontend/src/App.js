@@ -29,7 +29,7 @@ function App() {
     const handleCityDetailsClose = () => setIsCityDetailsOpen(false);
     const handleCompanyDialogClose = () => setIsCompanyDialogOpen(false);
     const handleNeighborhoodDialogClose = () => setIsNeighborhoodDialogOpen(false);
-    const handleNeighborhoodListDialogClose = () => setIsNeighborhoodListOpen(false);
+    const handleNeighborhoodListClose = () => setIsNeighborhoodListOpen(false);
 
     
 
