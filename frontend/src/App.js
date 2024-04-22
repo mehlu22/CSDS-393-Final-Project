@@ -51,61 +51,33 @@ function App() {
 
 
 
-
-
-    return ( <
-            div className = "App"
-            style = {
-                { backgroundImage: `url(${bg_image})` } } >
-            <
-            div className = "top-panel" >
-            <
-            button id = "searchBtn"
-            onClick = {
-                () => setIsDialogOpen(true) } > Search < /button> <
-            button id = "aboutBtn" > About < /button> <
-            button id = "contactBtn" > Contact < /button> <
-            /div> <
-            h1 onClick = {
-                () => setIsDialogOpen(true) } > Find your perfect city with a click < /h1> <
-            div className = "bottom-panel" >
-            <
-            div className = "bottom-left" >
-            <
-            a href = "https://github.com/mehlu22/CSDS-393-Final-Project/"
-            target = "_blank"
-            rel = "noopener noreferrer" >
-            GitHub Repo < img src = { git_img }
-            alt = "GitHub" / >
-            <
-            /a> <
-            /div> <
-            div className = "bottom-center" >
-            SARA developed by Aditi, Gautam, Jacob, Mehlam, Parv, Vish <
-            /div> <
-            div className = "bottom-right" >
-            <
-            a href = "/contact"
-            className = "contact-link" > Contact < /a> <
-            /div> <
-            /div> {
-                isDialogOpen && < DialogBox onClose = { handleDialogClose }
-                onSubmit = { handleFormSubmit }
-                />} {
-                    isCitiesDialogOpen && < CitiesDialogBox cities = { cities }
-                    onCitySelect = { handleCitySelection }
-                    onClose = { handleCitiesDialogClose }
-                    />} {
-                        isCityDetailsOpen && < CityDetailsDialogBox city = { selectedCity }
-                        onClose = { handleCityDetailsClose }
-                        onSubmit = { handleCityDetailsSubmit }
-                        />} {
-                            isCompanyDialogOpen && < CompanyDialogBox company = { company }
-                            onClose = { handleCompanyDialogClose }
-                            onSelectCompany = { handleCompanySelection }
-                            />} <
-                            /div>
-                        );
-                    }
-
-                    export default App;
+    return (
+        <div className="App" style={{backgroundImage:`url(${bg_image})`}}>
+          <div className="top-panel">
+            <button id="searchBtn" onClick={() => setIsDialogOpen(true)}>Search</button>
+            <button id="aboutBtn">About</button>
+            <button id="contactBtn">Contact</button>
+          </div>
+          <h1 onClick={() => setIsDialogOpen(true)}>Find your perfect city with a click</h1>
+          <div className="bottom-panel">
+            <div className="bottom-left">
+              <a href="https://github.com/mehlu22/CSDS-393-Final-Project/" target="_blank" rel="noopener noreferrer">
+              GitHub Repo <img src= {git_img}  alt="GitHub" />
+              </a>
+            </div>
+            <div className="bottom-center">
+              SARA developed by Aditi, Gautam, Jacob, Mehlam, Parv, Vish
+            </div>
+            <div className="bottom-right">
+              <a href="/contact" className="contact-link">Contact</a>
+            </div>
+          </div>
+          {isDialogOpen && <DialogBox onClose={handleDialogClose} onSubmit={handleFormSubmit} />}
+          {isCitiesDialogOpen && <CitiesDialogBox cities = {cities} onCitySelect={handleCitySelection} onClose={handleCitiesDialogClose} />}
+          {isCityDetailsOpen && <CityDetailsDialogBox city = {selectedCity} onClose = {handleCityDetailsClose} onSubmit = {handleCityDetailsSubmit} />}
+          {isCompanyDialogOpen && <CompanyDialogBox company = {company} onClose = {handleCompanyDialogClose} onSelectCompany={handleCompanySelection} />}
+        </div>
+      );
+    }
+    
+    export default App;
