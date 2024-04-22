@@ -27,3 +27,10 @@ def test_load_job_data(mock_engine, mock_read_sql):
 
 def test_find_job():
     with patch('job_utils.job_data', mock_job_data):
+        # Creating an example test case to test the finding job function
+        result = find_job('Austin', 'software developer', 105000)
+        assert not result.empty
+        assert result.iloc[0]['Organization'] == 'Cloudflare Consulting'
+
+if __name__ == "__main__":
+    pytest.main()
