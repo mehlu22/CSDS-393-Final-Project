@@ -8,15 +8,36 @@ function NeighborhoodDialogBox({ city, company, onClose, onSubmit }) {
     const [distanceToWork, setDistanceToWork] = useState('');
     const [distanceToSchool, setDistanceToSchool] = useState('');
 
-    const handleSubmit = () => {
-        console.log({
-            costOfLiving,
-            crimeRate,
-            publicTransport,
-            distanceToWork,
-            distanceToSchool
-        });
-        onSubmit(); // Optionally close after submitting
+    const handleSubmit = async () => {
+
+
+        const formData = {
+              costOfLiving : Number(costOfLiving),
+              crimeRate : Number(crimeRate),
+              publicTransport : Number(publicTransport),
+              distanceToWork : Number(distanceToWork),
+              distanceToSchool : Number(distanceToSchool),
+            };
+       try {
+              const response = await fetch('http://localhost:5000/neighborhoods', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify([city, formData]),
+              });
+          
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+          
+              const result = await response.json();
+              console.log("Received Neighborhoods", result); // Log the success message
+              onSubmit(result);
+            } catch (error) {
+              console.error("Failed to submit form data", error);
+            }
+        onClose(); // Optionally close after submitting
         
     };
 
