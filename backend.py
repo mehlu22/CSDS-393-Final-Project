@@ -20,10 +20,12 @@ def cities():
         data = request.json
         # Assume data contains the necessary features to predict cities
         features = list(data.values())
+        # Use your custom function to determine cities based on features
+        features = [1 if x == "Democrat" else 0 if x == 'Republican' else -1 if x == 'Neutral' else x for x in features]
+        print(features, "Yes")
 
-
-        stored_neighborhoods = predict_top_localities(features[0], features[1])
-        print(stored_neighborhoods)
+        stored_cities = predict_city(features)
+        print(stored_cities)
         return jsonify(stored_cities), 200
 
     elif request.method == 'GET':
@@ -32,7 +34,7 @@ def cities():
             return jsonify({"error": "No cities have been determined yet. Please make a POST request first."}), 400
         return jsonify(stored_cities)
     
-CORS(app)
+
 #Feature 2
 @app.route('/jobs', methods=['GET', 'POST'])
 def jobs():
@@ -51,8 +53,8 @@ def jobs():
         return jsonify(stored_company)
     
 
-CORS(app)
-#Feature 3
+
+'''#Feature 3
 @app.route('/neighborhoods', methods=['GET', 'POST'])
 def jobs():
 
@@ -60,14 +62,14 @@ def jobs():
         data = request.json
         features = list(data.values())
         print(features)
-        stored_company = find_job(features[0], features[1], features[2])
-        print(stored_company)
-        return jsonify(stored_company), 200
+        stored_neighborhoods = predict_top_localities(features[0], features[1])
+        print(stored_neighborhoods)
+        return jsonify(stored_neighborhoods), 200
 
     elif request.method == 'GET':
-        if not stored_company:
+        if not stored_neighborhoods:
             return jsonify({"error": "No cities have been determined yet. Please make a POST request first."}), 400
-        return jsonify(stored_company)
+        return jsonify(stored_neighborhoods)'''
     
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
