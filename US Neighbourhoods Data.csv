@@ -1,0 +1,101 @@
+City,Locality,CostOfLiving,CrimeRate,PublicTransportation,EnvironmentalRating,PublicSchoolRating
+Austin,Bryker Woods,2050000,2925,38,75,80
+Austin,Ridgetop,440000,3590,35,70,75
+Austin,Rosedale,949900,3045,40,80,80
+Austin,Shoal Crest,999000,5510,35,70,75
+Austin,Zilker,930500,7131,42,85,85
+Boston,Hyde Park,589000,1567,65,50,70
+Boston,Dorchester,723000,3695,70,55,60
+Boston,Allston,682500,1381,80,70,75
+Boston,Brighton,557500,1381,65,70,65
+Boston,Charlestown,935000,1732,85,80,80
+Charlotte,Myers Park,1507500,1959,20,75,80
+Charlotte,Foxcroft,1250000,2668,22,70,85
+Charlotte,Eastover,1702500,2187,25,80,90
+Charlotte,Colonial Village,528000,2540,22,65,75
+Charlotte,Commonwealth,499000,1840,27,85,95
+Chicago,Chinatown,275000,2655,70,60,65
+Chicago,Lincoln Park,688000,2930,85,75,80
+Chicago,Hyde Park,195000,2591,80,70,85
+Chicago,Loop,387250,13591,90,95,90
+Chicago,Oakland,361000,4766,65,55,50
+Cleveland,Lakewood,280250,1479,45,70,80
+Cleveland,Tremont,422500,2372,30,75,75
+Cleveland,University Circle,410000,2674,55,80,90
+Cleveland,Edgewater,131000,3815,45,60,70
+Cleveland,Old Brooklyn,155000,4985,50,65,70
+Dallas,Preston Hollow,927000,5139,35,70,80
+Dallas,Oak Lawn,555000,6104,40,75,80
+Dallas,Lakewood Village,1155000,1104,30,65,75
+Dallas,Far North,562500,2868,30,60,70
+Dallas,Lake Highlands,540000,4944,35,70,80
+Denver,Capitol Hill,390000,7939,45,70,80
+Denver,Five Points,575000,4846,40,75,85
+Denver,Golden Triangle,590000,2999,50,80,85
+Denver,Cherry Creek,1630000,9437,45,85,90
+Denver,Washington Park,1067500,5869,50,90,95
+Houston,Montrose,272500,10387,30,75,80
+Houston,River Oaks,1680000,4690,35,80,85
+Houston,Greater Heights,641500,6664,29,70,75
+Houston,Rice Village,481000,6102,40,85,90
+Houston,Meyerland,449000,4639,30,65,70
+Indianapolis,Wynnedale,301000,747,30,65,70
+Indianapolis,Decatur,247000,1953,25,70,75
+Indianapolis,Eagledale,139950,3638,35,60,65
+Indianapolis,Devington,185000,9333,30,55,60
+Indianapolis,Beech Grove,198000,2986,40,75,80
+Los Angeles,Beverly Hills,3022500,4874,50,70,80
+Los Angeles,Silver Lake,1444500,3032,56,75,70
+Los Angeles,Los Feliz,1900000,2830,60,80,75
+Los Angeles,Manhattan Beach,2350000,1060,45,60,65
+Los Angeles,Venice,1700000,5862,60,65,70
+Miami,Aventura,587500,4506,56,68,56
+Miami,Pinecrest,2812500,1825,58,90,72
+Miami,Coconut Grove,1500000,2097,55,55,20
+Miami,Coral Gables,1305000,840,59,72,87
+Miami,Edgewater,690000,2257,54,40,33
+Nashville,Germantown,578915,1971,71,47,56
+Nashville,Hermitage Hills,344750,1297,71,62,92
+Nashville,Sylvan Park,636500,8402,72,85,14
+Nashville,Midtown,1060000,1369,74,73,65
+Nashville,Bellmont Hillsboro,1205000,3538,76,91,41
+New York,Harlem,987500,4366,88,94,48
+New York,SoHo,2300000,12651,86,67,89
+New York,Chelsea,2252500,5642,89,78,25
+New York,Flushing,661815,4074,92,52,77
+New York,Tribeca,3410000,8017,89,81,14
+Philadelphia,Kensington,152500,6944,70,82,56
+Philadelphia,Fishtown,399000,6931,65,73,78
+Philadelphia,Wharton Hawthorn Bella Vista,670000,3097,67,94,33
+Philadelphia,Chestnut Hill,720000,2075,66,46,72
+Philadelphia,Germantown,215500,7297,68,85,19
+Phoenix,Central City,420000,9212,35,63,87
+Phoenix,Paradise Valley,3250000,1524,33,88,41
+Phoenix,Laveen,439990,3358,39,76,55
+Phoenix,Alhambra,360000,6216,36,42,92
+Phoenix,Maryvale,350000,3929,38,95,20
+Portland,Pearl District,400000,4761,48,94,67
+Portland,Boise,502000,6570,49,63,22
+Portland,Bridgeton,242500,9804,52,78,85
+Portland,King,590000,5321,47,36,94
+Portland,Parkrose,356500,9599,49,75,15
+San Diego,La Jolla,2265000,1961,35,72,76
+San Diego,Pacific Beach,1750000,4899,40,86,48
+San Diego,Mission Bay,995000,1947,37,55,92
+San Diego,Old Town,699000,4829,34,62,18
+San Diego,Mission Hills,1484000,1305,36,93,34
+San Francisco,North Beach,1285000,6051,80,90,77
+San Francisco,Chinatown,650000,6923,75,59,42
+San Francisco,Nob Hill,1112500,4090,78,83,65
+San Francisco,SoMa,722000,7311,74,47,91
+San Francisco,Potrero Hill,1300000,9706,79,70,20
+Seattle,Ballard,855000,8128,57,85,68
+Seattle,Fremont,836000,5394,60,71,47
+Seattle,Magnolia,1062500,2393,63,42,79
+Seattle,Ravenna,1084000,2470,56,93,23
+Seattle,Queen Anne,974500,2874,59,65,86
+Washington D.C,Georgetown,1725000,5984,95,73,45
+Washington D.C,Takoma Park,606250,3444,97,82,64
+Washington D.C,Shaw,780000,6960,96,55,91
+Washington D.C,Foggy Bottom,268000,4130,99,69,17
+Washington D.C,Adams Morgan,435000,2820,95,88,36
