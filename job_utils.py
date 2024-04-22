@@ -30,7 +30,7 @@ def find_job(city, profession, expected_salary):
     job_data_filtered['Salary_Diff'] = abs(job_data_filtered['Exp_Sal'] - expected_salary)
     sorted_jobs = job_data_filtered.sort_values(by='Salary_Diff')
 
-    return sorted_jobs[['City', 'Organization', 'Exp_Sal', 'Type']].head(1)
+    return sorted_jobs[['City', 'Organization', 'Exp_Sal', 'Type']].head(1).values.tolist()[0][1]
 
 # # Example usage
 # profession = 'doctor'
