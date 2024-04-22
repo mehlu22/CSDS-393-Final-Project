@@ -15,3 +15,8 @@ mock_job_data = pd.DataFrame({
 
 @patch('job_utils.pd.read_sql')
 @patch('job_utils.create_engine')
+
+def test_load_job_data(mock_engine, mock_read_sql):
+    # creating a mock engine of the local database so to not mess with the actual database
+    mock_read_sql.return_value = mock_job_data
+    mock_engine.return_value = MagicMock()
