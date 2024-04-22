@@ -24,3 +24,6 @@ def test_load_job_data(mock_engine, mock_read_sql):
     data = load_job_data()
     assert not data.empty
     assert len(data) == 4
+
+def test_find_job():
+    with patch('job_utils.job_data', mock_job_data):
