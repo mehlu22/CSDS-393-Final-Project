@@ -13,3 +13,7 @@ mock_data = pd.DataFrame({
     'EnvironmentalRating': [75, 70, 80, 50, 55],
     'PublicSchoolRating': [80, 75, 80, 70, 60]
 })
+
+@patch('housing_utils.pd.read_sql')
+@patch('housing_utils.create_engine')
+
