@@ -21,3 +21,13 @@ def test_predict_top_localities(mock_engine, mock_read_sql):
     # set up the mocks
     mock_engine.return_value = MagicMock()
     mock_read_sql.return_value = mock_data
+
+    # adding in the mock data into the function
+    with patch('housing_utils.data', mock_data):
+        city = 'Austin'
+        features = [500000, 3000, 37, 70, 75]  # assuming certain features for the city
+        top_localities = predict_top_localities(city, features, 2)
+
+        assert len(top_localities) == 2  # use to return the top 2 localities in the city
+        assert 'Rosedale' in top_localities  # expecting Rosedale due to closer feature matching
+        assert 'Ridgetop' in top_localities  # expecting Ridgetop as another top locality
