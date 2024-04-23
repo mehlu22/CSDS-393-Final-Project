@@ -17,3 +17,7 @@ mock_data = pd.DataFrame({
 @patch('housing_utils.pd.read_sql')
 @patch('housing_utils.create_engine')
 
+def test_predict_top_localities(mock_engine, mock_read_sql):
+    # set up the mocks
+    mock_engine.return_value = MagicMock()
+    mock_read_sql.return_value = mock_data
