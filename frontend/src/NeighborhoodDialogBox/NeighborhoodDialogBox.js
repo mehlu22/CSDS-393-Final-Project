@@ -48,7 +48,8 @@ function NeighborhoodDialogBox({ city, company, onClose, onSubmit }) {
         <
         h2 > Enter Neighborhood Details: { company } in { city } < /h2> <
         form onSubmit = {
-            (e) => e.preventDefault() } >
+            (e) => e.preventDefault()
+        } >
         <
         label >
         Cost of Living:
@@ -56,56 +57,50 @@ function NeighborhoodDialogBox({ city, company, onClose, onSubmit }) {
         input type = "number"
         value = { costOfLiving }
         onChange = { e => setCostOfLiving(e.target.value) }
-        /> <
-        /label> <
+        /> < /
+        label > <
         label >
         Crime Rate:
         <
         input type = "number"
         value = { crimeRate }
         onChange = { e => setCrimeRate(e.target.value) }
-        /> <
-        /label> <
+        /> < /
+        label > <
         label >
         Public Transportation:
         <
         input type = "number"
         value = { publicTransport }
         onChange = { e => setPublicTransport(e.target.value) }
-        /> <
-        /label> <
+        /> < /
+        label > <
         label >
         Distance to Work(km):
         <
         input type = "number"
         value = { distanceToWork }
         onChange = { e => setDistanceToWork(e.target.value) }
-        /> <
-        /label> <
+        /> < /
+        label > <
         label >
         Distance to School(km):
         <
         input type = "number"
         value = { distanceToSchool }
         onChange = { e => setDistanceToSchool(e.target.value) }
-        /> <
-        /label> <
+        /> < /
+        label > <
         div className = "buttons" >
         <
         button type = "button"
         onClick = { handleSubmit } > Submit < /button> <
         button type = "button"
-        onClick = { onClose } > Close < /button> <
-        /div> <
-        /form> <
-        /div> <
+        onClick = { onClose } > Close < /button> < /
+        div > <
+        /form> < /
+        div > <
         /div>
     );
 }
-
-<<
-<< << < HEAD
-export default NeighborhoodDialogBox; ===
-=== =
-export default NeighborhoodDialogBox; >>>
->>> > 54 fca509c19656b46233312d784e22b1d657ff00
+export default NeighborhoodDialogBox;
