@@ -39,3 +39,6 @@ def test_no_data_for_city():
     with patch('housing_utils.data', empty_data_with_columns):
         result = predict_top_localities('Unknown City', [100000, 5000, 50, 80, 85], 2)
         assert result == ["No data available for this city."]
+
+if __name__ == "__main__":
+    pytest.main()
