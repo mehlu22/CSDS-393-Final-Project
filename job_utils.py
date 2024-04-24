@@ -12,19 +12,19 @@ def load_job_data():
 job_data = load_job_data()
 
 def find_job(city, profession, expected_salary):
-    # This example assumes `job_data` is globally accessible and a DataFrame
-    filtered_data = job_data[(job_data['City'].str.lower() == city.lower()) & 
-                             (job_data['Profession'].str.contains(profession, case=False))]
-    if filtered_data.empty:
-        return "No matching jobs found."
+    if profession.lower() == 'doctor':
+        job_data_filtered = job_data[job_data['Profession'].str.contains('Doctor')]
+    elif profession.lower() == 'software engineer':
+        job_data_filtered = job_data[job_data['Profession'].str.contains('Software Developer')]
+    elif profession.lower() == 'consultant':
+        job_data_filtered = job_data[job_data['Profession'].str.contains('Consultant')]
     
-    filtered_data['Salary_Diff'] = abs(filtered_data['Exp_Sal'] - expected_salary)
-    sorted_jobs = filtered_data.sort_values(by='Salary_Diff')
+    job_data_filtered = job_data_filtered[job_data_filtered['City'].str.lower() == city.lower()]
+    job_data_filtered['Salary_Diff'] = abs(job_data_filtered['Exp_Sal'] - expected_salary)
+    sorted_jobs = job_data_filtered.sort_values(by='Salary_Diff')
     
-    if sorted_jobs.empty:
-        return "No jobs close to the expected salary."
-    else:
-        return sorted_jobs.head(1)
+    # Return the best match
+    return sorted_jobs[['City', 'Organization', 'Exp_Sal', 'Type']].head(1)
 
 # # Example usage
 # profession = 'doctor'
