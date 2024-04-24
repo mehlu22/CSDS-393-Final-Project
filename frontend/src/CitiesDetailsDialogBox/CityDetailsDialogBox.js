@@ -39,55 +39,31 @@ function CityDetailsDialogBox({ city, onClose, onSubmit }) {
         onClose();
     };
 
-    return ( <
-        div className = "city-details-dialog-backdrop" >
-        <
-        div className = "city-details-dialog-box" >
-        <
-        h2 > { city } < /h2> <
-        form onSubmit = {
-            (e) => e.preventDefault() } >
-        <
-        div className = "form-group" >
-        <
-        label htmlFor = "profession" > Profession: < /label> <
-        select id = "profession"
-        value = { profession }
-        onChange = {
-            (e) => setProfession(e.target.value) } >
-        <
-        option value = "Software Engineer" > Software Engineer < /option> <
-        option value = "Doctor" > Doctor < /option> <
-        option value = "Consultant" > Consultant < /option> <
-        /select> <
-        /div> <
-        div className = "form-group" >
-        <
-        label htmlFor = "expectedSalary" > Expected Salary: < /label> <
-        input type = "number"
-        id = "expectedSalary"
-        value = { expectedSalary }
-        onChange = {
-            (e) => setExpectedSalary(e.target.value) }
-        placeholder = "Enter expected salary"
-        min = "0" /
-        >
-        <
-        /div> <
-        fieldset >
-        <
-        legend > Type: < /legend> <
-        label >
-        <
-        input type = "radio"
+    return ( <div className = "city-details-dialog-backdrop" >
+       <div className = "city-details-dialog-box" >
+        <h2 > { city } </h2> <form onSubmit = {(e) => e.preventDefault() } >
+        <div className = "form-group" >
+        <label htmlFor = "profession" > Profession: </label> 
+        <select id = "profession" value = { profession } onChange = {(e) => setProfession(e.target.value) } >
+        <option value = "Software Engineer" > Software Engineer </option> 
+        <option value = "Doctor" > Doctor </option>
+        <option value = "Consultant" > Consultant </option> 
+        </select> 
+        </div> 
+        <div className = "form-group" >
+        <label htmlFor = "expectedSalary" > Expected Salary: </label> 
+        <input type = "number" id = "expectedSalary" value = { expectedSalary } onChange = { (e) => setExpectedSalary(e.target.value) } placeholder = "Enter expected salary"
+       min = "0" />
+        </div> <fieldset>
+        <legend> Type: </legend> <label>
+        <input type = "radio"
         name = "type"
         value = "In-person"
         checked = { type === 'In-person' }
         onChange = {
             (e) => setType(e.target.value) }
         />
-        In - person <
-        /label> <
+        In - person </label> <
         label >
         <
         input type = "radio"
@@ -97,30 +73,21 @@ function CityDetailsDialogBox({ city, onClose, onSubmit }) {
         onChange = {
             (e) => setType(e.target.value) }
         />
-        Hybrid <
-        /label> <
+        Hybrid </label> <
         label >
         <
         input type = "radio"
         name = "type"
         value = "Remote"
         checked = { type === 'Remote' }
-        onChange = {
-            (e) => setType(e.target.value) }
-        />
-        Remote <
-        /label> <
-        /fieldset> <
+        onChange = {(e) => setType(e.target.value) }/>
+        Remote </label> </fieldset> <
         div className = "form-buttons" >
         <
         button type = "button"
-        onClick = { onClose } > Close < /button> <
+        onClick = { onClose } > Close </button> <
         button type = "button"
-        onClick = { handleSubmit } > Submit < /button> <
-        /div> <
-        /form> <
-        /div> <
-        /div>
+        onClick = { handleSubmit } > Submit </button> </div> </form> </div> </div>
     );
 }
 
