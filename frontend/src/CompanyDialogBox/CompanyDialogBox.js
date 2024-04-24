@@ -8,25 +8,18 @@ function CompanyDialogBox({ company, onClose, onSelectCompany }) {
     }, []);
 
 
-    return ( <
-        div className = "company-dialog-backdrop" >
-        <
-        div className = "company-dialog-box" >
-        <
-        h2 style = {
-            { fontSize: '30px', color: '#333', marginBottom: '20px' } } > Selected Company < /h2> {
-            companies.map((company, index) => ( <
-                button key = { index }
+    return ( 
+    <div className = "company-dialog-backdrop" >
+        <div className = "company-dialog-box" >
+        <h2 style = {
+            { fontSize: '30px', color: '#333', marginBottom: '20px' } } > Selected Company </h2> {
+            companies.map((company, index) => (<button key = { index }
                 className = "company-btn"
                 onClick = {
-                    () => onSelectCompany(company) } > { company } <
-                /button>
+                    () => onSelectCompany(company) } > { company } </button>
             ))
-        } <
-        button className = "close-btn"
-        onClick = { onClose } > Close < /button> <
-        /div> <
-        /div>
+        } <button className = "close-btn"
+        onClick = { onClose } > Close </button> </div> </div>
     );
 }
 
