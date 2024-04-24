@@ -51,7 +51,7 @@ function CityDetailsDialogBox({ city, onClose, onSubmit }) {
         </select> 
         </div> 
         <div className = "form-group" >
-        <label htmlFor = "expectedSalary" > Expected Salary: </label> 
+        <label htmlFor = "expectedSalary" > Expected Salary(per $1000): </label> 
         <input type = "number" id = "expectedSalary" value = { expectedSalary } onChange = { (e) => setExpectedSalary(e.target.value) } placeholder = "Enter expected salary"
        min = "0" />
         </div> <fieldset>
