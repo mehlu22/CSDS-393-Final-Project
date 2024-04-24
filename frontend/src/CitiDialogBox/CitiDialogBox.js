@@ -16,23 +16,18 @@ function CitiesDialogBox({ cities, onCitySelect, onClose }) {
         setShowCityDetails(false);
     };
 
-    return ( <
-        div className = "cities-dialog-backdrop" >
-        <
-        div className = "cities-dialog-box" >
-        <
-        h2 > Selected Cities < /h2> <
-        ul > {
-            cities.map((city, index) => ( <
-                li key = { index }
-                onClick = {
-                    () => handleCityClick(city) } > { city } < /li>
-            ))
-        } <
-        /ul> <
-        button onClick = { onClose } > Close < /button> <
-        /div> <
-        /div>
+    return ( 
+        <div className = "cities-dialog-backdrop" >
+            <div className = "cities-dialog-box" >
+            <h2 > Selected Cities</h2>
+            <ul> 
+             {cities.map((city, index) => (
+                <li key = {index} onClick = {() => handleCityClick(city)} >{city}</li>
+            ))} 
+            </ul> 
+            <button onClick = {onClose}>Close</button>
+            </div> 
+        </div>
     );
 }
 
