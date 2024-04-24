@@ -19,6 +19,7 @@ def cities():
     if request.method == 'POST':
         data = request.json
         # Assume data contains the necessary features to predict cities
+
         features = list(data.values())
         # Use your custom function to determine cities based on features
         features = [1 if x == "Democrat" else 0 if x == 'Republican' else -1 if x == 'Neutral' else x for x in features]
@@ -41,9 +42,12 @@ def jobs():
 
     if request.method == 'POST':
         data = request.json
+        print(data)
         features = list(data.values())
         print(features)
-        stored_company = find_job(features[0], features[1], features[2])
+        dataframe = find_job(features[0], features[1], features[2])
+        print(dataframe)
+        stored_company = dataframe.values.tolist()[0][1]
         print(stored_company)
         return jsonify(stored_company), 200
 
