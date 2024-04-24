@@ -10,21 +10,12 @@ function NeighborhoodListDialogBox({ neighborhoods, onClose }) {
 
 
 
-    return ( <
-        div className = "neighborhood-list-dialog-backdrop" >
-        <
-        div className = "neighborhood-list-dialog-box" >
-        <
-        h2 > Selected Neighborhoods < /h2> <
-        ul > {
-            neighborhoodList.map((neighborhood, index) => ( <
-                li key = { index } > { neighborhood } < /li>
+    return ( <div className = "neighborhood-list-dialog-backdrop" >
+        <div className = "neighborhood-list-dialog-box" >
+        <h2 > Selected Neighborhoods </h2> <ul > {
+            neighborhoodList.map((neighborhood, index) => (<li key = { index } > { neighborhood } </li>
             ))
-        } <
-        /ul> <
-        button onClick = { onClose } > Close < /button> <
-        /div> <
-        /div>
+        } </ul> <button onClick = { onClose } > Close </button> </div> </div>
     );
 }
 
