@@ -8,17 +8,19 @@ import CompanyDialogBox from './CompanyDialogBox/CompanyDialogBox';
 import CityDetailsDialogBox from './CitiesDetailsDialogBox/CityDetailsDialogBox';
 import NeighborhoodDialogBox from './NeighborhoodDialogBox/NeighborhoodDialogBox';
 import NeighborhoodListDialogBox from './NeighborhoodListDialogBox/NeighborhoodListDialogBox';
-import AboutDialogBox from './AboutDialogBox/AboutDialogBox';
+
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isCitiesDialogOpen, setIsCitiesDialogOpen] = useState(false);
   const [isCityDetailsOpen, setIsCityDetailsOpen] = useState(false);
   const [isCompanyDialogOpen, setIsCompanyDialogOpen] = useState(false);
   const [isNeighborhoodDialogOpen, setIsNeighborhoodDialogOpen] = useState(false);
+  const [isNeighborhoodListOpen, setIsNeighborhoodListOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedCompany, setSelectedCompany] = useState('');
-  const [isNeighborhoodListOpen, setIsNeighborhoodListOpen] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
+  const [cities, setCities] = useState([]);
+  const [company, setCompany] = useState([]);
+  const [neighborhoods, setNeighborhoods] = useState([]);
 
 
 
@@ -27,13 +29,15 @@ function App() {
   const handleCityDetailsClose = () => setIsCityDetailsOpen(false);
   const handleCompanyDialogClose = () => setIsCompanyDialogOpen(false);
   const handleNeighborhoodDialogClose = () => setIsNeighborhoodDialogOpen(false);
-  const handleAbout = () => {setShowAbout(true); };
+  const handleNeighborhoodListClose = () => setIsNeighborhoodListOpen(false);
 
-  const closeAbout = () => {   setShowAbout(false);  };
 
-  const handleFormSubmit = () => {
+
+  const handleFormSubmit = (citiesData) => {
     setIsDialogOpen(false);
     setIsCitiesDialogOpen(true);
+    setCities(citiesData);
+
   };
 
   const handleCitySelection = (city) => {
@@ -42,7 +46,8 @@ function App() {
     setIsCityDetailsOpen(true);
   };
 
-  const handleCityDetailsSubmit = () => {
+  const handleCityDetailsSubmit = (company) => {
+    setCompany(company);
     setIsCityDetailsOpen(false);
     setIsCompanyDialogOpen(true);
   };
@@ -54,19 +59,17 @@ function App() {
 
   
   };
-  const handleNeighborhoodDialogSubmit = () => {
+  const handleNeighborhoodDialogSubmit = (neighborhoods) => {
+    setNeighborhoods(neighborhoods);
     setIsNeighborhoodListOpen(true); // Show neighborhood list dialog on submit
   };
 
-  const handleNeighborhoodListClose = () => {
-    setIsNeighborhoodListOpen(false);
-  };
 
   return (
     <div className="App" style={{backgroundImage:`url(${bg_image})`}}>
            <div className="top-panel">
         <button id="searchBtn" onClick={() => setIsDialogOpen(true)}>Search</button>
-        <button id="aboutBtn" onClick={handleAbout}>About</button>
+        <button id="aboutBtn">About</button>
         <button id="contactBtn">Contact</button>
       </div>
       <h1 onClick={() => setIsDialogOpen(true)}>Find your perfect city with a click</h1>
@@ -85,12 +88,11 @@ function App() {
       </div>
   
       {isDialogOpen && <DialogBox onClose={handleDialogClose} onSubmit={handleFormSubmit} />}
-      {isCitiesDialogOpen && <CitiesDialogBox onClose={handleCitiesDialogClose} onCitySelect={handleCitySelection} />}
-      {isCityDetailsOpen && <CityDetailsDialogBox onClose={handleCityDetailsClose} onSubmit={handleCityDetailsSubmit} />}
-      {isCompanyDialogOpen && <CompanyDialogBox onClose={handleCompanyDialogClose} onSelectCompany={handleCompanySelection} />}
+      {isCitiesDialogOpen && <CitiesDialogBox cities = {cities} onClose={handleCitiesDialogClose} onCitySelect={handleCitySelection} />}
+      {isCityDetailsOpen && <CityDetailsDialogBox city={selectedCity} onClose={handleCityDetailsClose} onSubmit={handleCityDetailsSubmit} />}
+      {isCompanyDialogOpen && <CompanyDialogBox company = {company}onClose={handleCompanyDialogClose} onSelectCompany={handleCompanySelection} />}
       {isNeighborhoodDialogOpen && <NeighborhoodDialogBox city={selectedCity} company={selectedCompany} onClose={handleNeighborhoodDialogClose} onSubmit={handleNeighborhoodDialogSubmit} />}
-      {isNeighborhoodListOpen && <NeighborhoodListDialogBox onClose={handleNeighborhoodListClose} />}
-      {showAbout && <AboutDialogBox onClose={closeAbout} />}
+      {isNeighborhoodListOpen && <NeighborhoodListDialogBox neighborhoods={neighborhoods} onClose={handleNeighborhoodListClose} />}
 
 
     </div>
