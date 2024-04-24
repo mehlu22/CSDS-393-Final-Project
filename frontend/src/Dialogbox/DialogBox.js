@@ -59,12 +59,12 @@ function DialogBox({onClose, onSubmit }) {
         </div>
         {/* Input for average high temperature */}
         <div className="form-group">
-          <label>Average High Temp: {avgHighTemp}°F</label>
+          <label>Average High Temp(Fahrenheit): {avgHighTemp}°F</label>
           <input type="range" min="0" max="110" value={avgHighTemp} onChange={(e) => setAvgHighTemp(e.target.value)} />
         </div>
         {/* Input for average low temperature */}
         <div className="form-group">
-          <label>Average Low Temp: {avgLowTemp}°F</label>
+          <label>Average Low Temp(Fahrenheit): {avgLowTemp}°F</label>
           <input type="range" min="0" max="100" value={avgLowTemp} onChange={(e) => setAvgLowTemp(e.target.value)} />
         </div>
         {/* Input for precipitation */}
@@ -79,12 +79,12 @@ function DialogBox({onClose, onSubmit }) {
         </div>
         {/* Input for cost of living */}
         <div className="form-group">
-          <label>Cost of Living:</label>
+          <label>Cost of Living(Per 100k people):</label>
           <input type="text" value={costOfLiving} onChange={(e) => setCostOfLiving(e.target.value)} />
         </div>
         {/* Input for crime rate */}
         <div className="form-group">
-          <label>Crime Rate:</label>
+          <label>Crime Rate(Per 100k people):</label>
           <input type="text" value={crimeRate} onChange={(e) => setCrimeRate(e.target.value)} />
         </div>
         {/* Radio buttons for political affiliation */}
@@ -107,7 +107,7 @@ function DialogBox({onClose, onSubmit }) {
         </div>
         {/* Input for public transportation */}
         <div className="form-group">
-          <label>Public transportation:</label>
+          <label>Public transportation(Rating from 0-100):</label>
           <input type="text" value={publicTransportation} onChange={(e) => setPublicTransportation(e.target.value)} />
         </div>
         <button className="close-btn" onClick={onClose}>Close</button>
