@@ -6,7 +6,8 @@ import jacob_img from "../images/jacob_img.png"
 import mehlam_img from "../images/mehlam_img.png"
 import parv_img from "../images/parv_img.png"
 import vish_img from "../images/vish_img.png"
-
+//importing all the images above as components
+// react doesn't support local paths so images have to imported as components just like the normal components
 function AboutDialogBox({ onClose }) {
   return (
     <div className="about-dialog-backdrop">
