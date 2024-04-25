@@ -30,7 +30,7 @@
   
   .developer-profile:hover {
     transform: scale(1.05); /* Slight increase in size on hover */
-    background-color: #ffffff30; /* Subtle background color change on hover */
+    background-color: #ffffff30; /* light background color change on hover */
   }
   
   .developer-photo {
@@ -56,6 +56,6 @@
   }
   
   .about-dialog-box button:hover {
-    background-color: #000000; /* Darker blue on hover */
+    background-color: #000000; /* Darker blue on the hover */
   }
   
