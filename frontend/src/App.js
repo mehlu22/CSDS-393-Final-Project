@@ -72,8 +72,10 @@ function App() {
     <div className="App" style={{backgroundImage:`url(${bg_image})`}}>
            <div className="top-panel">
         <button id="searchBtn" onClick={() => setIsDialogOpen(true)}>Search</button>
-        <button id="aboutBtn">About</button>
-        <button id="contactBtn">Contact</button>
+        <button id="aboutBtn" onClick={handleAbout}>About</button>
+        <a href="https://forms.gle/LqTaAwyJ8yUheLXaA" target="_blank" rel="noopener noreferrer">
+          Contact us 
+          </a>
       </div>
       <h1 onClick={() => setIsDialogOpen(true)}>Find your perfect city with a click</h1>
       <div className="bottom-panel">
