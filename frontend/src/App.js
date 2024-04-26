@@ -31,7 +31,9 @@ function App() {
   const handleCompanyDialogClose = () => setIsCompanyDialogOpen(false);
   const handleNeighborhoodDialogClose = () => setIsNeighborhoodDialogOpen(false);
   const handleNeighborhoodListClose = () => setIsNeighborhoodListOpen(false);
+  const handleAbout = () => {setShowAbout(true); };
 
+  const closeAbout = () => {   setShowAbout(false);  };
 
 
   const handleFormSubmit = (citiesData) => {
@@ -94,7 +96,7 @@ function App() {
       {isCompanyDialogOpen && <CompanyDialogBox company = {company}onClose={handleCompanyDialogClose} onSelectCompany={handleCompanySelection} />}
       {isNeighborhoodDialogOpen && <NeighborhoodDialogBox city={selectedCity} company={selectedCompany} onClose={handleNeighborhoodDialogClose} onSubmit={handleNeighborhoodDialogSubmit} />}
       {isNeighborhoodListOpen && <NeighborhoodListDialogBox neighborhoods={neighborhoods} onClose={handleNeighborhoodListClose} />}
-
+      {showAbout && <AboutDialogBox onClose={closeAbout} />}
 
     </div>
   );
