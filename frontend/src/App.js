@@ -8,6 +8,7 @@ import CompanyDialogBox from './CompanyDialogBox/CompanyDialogBox';
 import CityDetailsDialogBox from './CitiesDetailsDialogBox/CityDetailsDialogBox';
 import NeighborhoodDialogBox from './NeighborhoodDialogBox/NeighborhoodDialogBox';
 import NeighborhoodListDialogBox from './NeighborhoodListDialogBox/NeighborhoodListDialogBox';
+import AboutDialogBox from './AboutDialogBox/AboutDialogBox';
 
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -21,7 +22,7 @@ function App() {
   const [cities, setCities] = useState([]);
   const [company, setCompany] = useState([]);
   const [neighborhoods, setNeighborhoods] = useState([]);
-
+  const [showAbout, setShowAbout] = useState(false);
 
 
   const handleDialogClose = () => setIsDialogOpen(false);
