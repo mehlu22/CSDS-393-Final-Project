@@ -1,37 +1,52 @@
 import React, { useState } from 'react';
 import './Dialogbox.css'; // Ensure this path matches your file structure
 
-function DialogBox({ onClose, onSubmit }) {
+function DialogBox({onClose, onSubmit }) {
   const [population, setPopulation] = useState(6000000);
   const [avgHighTemp, setAvgHighTemp] = useState(55);
   const [avgLowTemp, setAvgLowTemp] = useState(50);
   const [precipitation, setPrecipitation] = useState(50);
   const [medianAge, setMedianAge] = useState(59);
-  const [costOfLiving, setCostOfLiving] = useState('');
-  const [crimeRate, setCrimeRate] = useState('');
-  const [politicalAffiliation, setPoliticalAffiliation] = useState('');
+  const [costOfLiving, setCostOfLiving] = useState(50);
+  const [crimeRate, setCrimeRate] = useState(50);
+  const [politicalAffiliation, setPoliticalAffiliation] = useState('Democrat');
+  const [publicTransportation, setPublicTransportation] = useState(50)
 
   // The submission handler
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     // Here you can structure the formData as needed by your backend or further processing
     const formData = {
-      population,
-      avgHighTemp,
-      avgLowTemp,
-      precipitation,
-      medianAge,
-      costOfLiving,
-      crimeRate,
-      politicalAffiliation,
-    };
+       population: Number(population),
+       avgHighTemp: Number(avgHighTemp),
+       avgLowTemp: Number(avgLowTemp),
+       precipitation: Number(precipitation),
+       medianAge: Number(medianAge),
+       costOfLiving: costOfLiving === '' ? null: Number(costOfLiving),
+       crimeRate: crimeRate === '' ? null : Number(crimeRate), 
+       politicalAffiliation,
+       publicTransportation: Number(publicTransportation),
+     };
+   try {
+       const response = await fetch('http://localhost:5000/cities', {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(formData),
+       });
 
-    console.log(formData); // Demonstrating form data logging, replace with onSubmit call or other actions
+       if (!response.ok) {
+           throw new Error('Network response was not ok');
+       }
 
-    // Call the onSubmit prop function passed from the parent component
-    onSubmit(); // Pass formData or other necessary information if needed
-
-    onClose(); // Close the dialog after submission
-  };
+       const result = await response.json();
+       console.log("Received Cities", result); // Log the success message
+       onSubmit(result);
+   } catch (error) {
+       console.error("Failed to submit form data", error);
+   }
+   onClose();
+};
 
   return (
     <div className="dialog-backdrop">
@@ -44,12 +59,12 @@ function DialogBox({ onClose, onSubmit }) {
         </div>
         {/* Input for average high temperature */}
         <div className="form-group">
-          <label>Average High Temp: {avgHighTemp}°F</label>
+          <label>Average High Temp(Fahrenheit): {avgHighTemp}°F</label>
           <input type="range" min="0" max="110" value={avgHighTemp} onChange={(e) => setAvgHighTemp(e.target.value)} />
         </div>
         {/* Input for average low temperature */}
         <div className="form-group">
-          <label>Average Low Temp: {avgLowTemp}°F</label>
+          <label>Average Low Temp(Fahrenheit): {avgLowTemp}°F</label>
           <input type="range" min="0" max="100" value={avgLowTemp} onChange={(e) => setAvgLowTemp(e.target.value)} />
         </div>
         {/* Input for precipitation */}
@@ -64,12 +79,12 @@ function DialogBox({ onClose, onSubmit }) {
         </div>
         {/* Input for cost of living */}
         <div className="form-group">
-          <label>Cost of Living:</label>
+          <label>Cost of Living(Per 1000$):</label>
           <input type="text" value={costOfLiving} onChange={(e) => setCostOfLiving(e.target.value)} />
         </div>
         {/* Input for crime rate */}
         <div className="form-group">
-          <label>Crime Rate:</label>
+          <label>Crime Rate(Per 100k people):</label>
           <input type="text" value={crimeRate} onChange={(e) => setCrimeRate(e.target.value)} />
         </div>
         {/* Radio buttons for political affiliation */}
@@ -89,6 +104,11 @@ function DialogBox({ onClose, onSubmit }) {
               Neutral
             </label>
           </fieldset>
+        </div>
+        {/* Input for public transportation */}
+        <div className="form-group">
+          <label>Public transportation(Rating from 0-100):</label>
+          <input type="text" value={publicTransportation} onChange={(e) => setPublicTransportation(e.target.value)} />
         </div>
         <button className="close-btn" onClick={onClose}>Close</button>
         <button className="submit-btn" onClick={handleSubmit}>Submit</button>

@@ -1,0 +1,61 @@
+.about-dialog-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-dialog-box {
+    background-color: #030304; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(238, 212, 212, 0); 
+    width: 45%; /* Smaller width. it can be adjusted. For standard laptops 45% is apt*/
+    max-width: 600px; 
+    overflow-y: auto; 
+    transition: transform 0.3s ease-in-out; 
+  }
+  
+  .developer-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .developer-profile:hover {
+    transform: scale(1.05); /* Slight increase in size on hover */
+    background-color: #ffffff30; /* light background color change on hover */
+  }
+  
+  .developer-photo {
+    width: 80px; /* Smaller photo size */
+    height: 80px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular photos */
+    margin-right: 20px;
+  }
+  
+  .developer-info {
+    flex-grow: 1;
+  }
+  
+  .about-dialog-box button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color:rgb(57, 55, 55);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .about-dialog-box button:hover {
+    background-color: #000000; /* Darker blue on the hover */
+  }
+  

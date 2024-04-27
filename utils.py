@@ -1,5 +1,6 @@
 import pandas as pd
 import pymysql
+import numpy as np
 from sqlalchemy import create_engine
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
