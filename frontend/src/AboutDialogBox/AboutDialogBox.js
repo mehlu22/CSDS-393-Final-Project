@@ -49,7 +49,7 @@ function AboutDialogBox({ onClose }) {
           <img src={parv_img} alt="Parv" className="developer-photo"/>
           <div className="developer-info">
             <h3>Parv</h3>
-            <p>Junior studying Computer Science and minoring in German. Worked on feature 1 and 3.</p>
+            <p>Junior studying Computer Science and minoring in German. Worked on frontend, mainly feature 1 and 3.</p>
           </div>
           
         </div>
