@@ -1,0 +1,48 @@
+.neighborhood-list-dialog-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.neighborhood-list-dialog-box {
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.neighborhood-list-dialog-box h2 {
+    margin-bottom: 15px;
+}
+
+.neighborhood-list-dialog-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.neighborhood-list-dialog-box li {
+    padding: 8px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.neighborhood-list-dialog-box button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: rgb(26, 24, 24);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.neighborhood-list-dialog-box button:hover {
+    background-color: #0056b3;
+}
