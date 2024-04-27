@@ -79,7 +79,7 @@ function DialogBox({onClose, onSubmit }) {
         </div>
         {/* Input for cost of living */}
         <div className="form-group">
-          <label>Cost of Living(Per 100k people):</label>
+          <label>Cost of Living(Per 1000$):</label>
           <input type="text" value={costOfLiving} onChange={(e) => setCostOfLiving(e.target.value)} />
         </div>
         {/* Input for crime rate */}
