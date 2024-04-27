@@ -46,7 +46,7 @@ function NeighborhoodDialogBox({ city, company, onClose, onSubmit }) {
         <h2 > Enter Neighborhood Details: { company } in { city } </h2> 
         <form onSubmit = {(e) => e.preventDefault() }>
         <label >
-        Cost of Living(per 100k people):
+        Cost of Living(per 1000$):
         <input type = "number"
         value = { costOfLiving }
         onChange = { e => setCostOfLiving(e.target.value) }/> </label > <label >
