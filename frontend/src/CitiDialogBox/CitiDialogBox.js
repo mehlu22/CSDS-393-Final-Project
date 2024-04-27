@@ -19,7 +19,7 @@ function CitiesDialogBox({ cities, onCitySelect, onClose }) {
     return ( 
         <div className = "cities-dialog-backdrop" >
             <div className = "cities-dialog-box" >
-            <h2 > Selected Cities</h2>
+            <h2 > Matched Cities</h2>
             <ul> 
              {cities.map((city, index) => (
                 <li key = {index} onClick = {() => handleCityClick(city)} >{city}</li>
