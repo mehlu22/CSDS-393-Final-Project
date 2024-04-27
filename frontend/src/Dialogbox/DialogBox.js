@@ -54,7 +54,7 @@ function DialogBox({ onClose, onSubmit }) {
         </div>
         {/* Input for precipitation */}
         <div className="form-group">
-          <label>Precipitation: {precipitation}%</label>
+          <label>Precipitation: {precipitation}cm</label>
           <input type="range" min="0" max="100" value={precipitation} onChange={(e) => setPrecipitation(e.target.value)} />
         </div>
         {/* Input for median age */}
