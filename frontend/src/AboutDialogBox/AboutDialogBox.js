@@ -57,7 +57,7 @@ function AboutDialogBox({ onClose }) {
           <img src={vish_img} alt="Vish" className="developer-photo"/>
           <div className="developer-info">
             <h3>Vish</h3>
-            <p>Senior studying Computer Science and a star D3 tennis player. Worked on feature 2 and the backend</p>
+            <p>Senior studying Computer Science and a star D3 tennis player. Worked on frontend for feature 2 and assisted with the backend</p>
           </div>
           
         </div>
